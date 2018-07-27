@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <!-- split the container into 2 columns -->
+    <container name="product.info.sub" htmlTag="div" htmlClass="row container product-info-sub">
+        <container name="product.info.details.container" htmlTag="div" htmlClass="col-lg-10 product-info-details-container"/>
+        <container name="product.info.sub.others" htmlTag="div" htmlClass="col-lg-2 product-info-sub-others"/>
+    </container>
+    <move element="product.info.sub" destination="content" after="product.info.media"/>
+    <!-- move tab to the main container -->
+    <move element="product.info.details" destination="product.info.details.container"/>
+    <!-- move upsell to to the side -->
+    <move element="product.info.upsell" destination="product.info.sub.others"/>
+    <referenceBlock name="product.attributes" remove="true" />
+    <!-- create the gurantee cms block to the tab block -->
+    <referenceBlock name="product.info.details">
+        <block class="Magento\Cms\Block\Block" name="ws_category_product_guarantee" group="detailed_info">
+            <arguments>
+                <argument name="block_id" xsi:type="string">ws_category_product_guarantee</argument>
+                <argument name="title" translate="true" xsi:type="string">Guarantee</argument>
+		<argument name="priority" xsi:type="string">3</argument>
+            </arguments>
+        </block>
+    </referenceBlock>
+    <!-- move the social sharing block close to the gallery -->
+    <move element="social.sharing" destination="product.info.media" after="product.info.media.image"/>
+    <referenceContainer name="product.info.price">
+    </referenceContainer>
+    <!-- remove the block describing that qty of stock left -->
+    <referenceBlock name="product.info.simple.extra.catalog_inventory_stockqty_default" remove="true"/>
+    <referenceContainer name="product.info.details.container">
+		 
+        <container name="questions_holder" htmlTag="div" htmlClass="questions_holder">
+			 <block class="Magento\Review\Block\Product\View\ListView" name="review.desktop" as="review_desktop" template="Magento_Review::product/view/list.phtml"/> 
+            <block class="PHPCuong\ProductQuestionAndAnswer\Block\Product\Question" name="questions_desktop" as="questions_desktop" template="PHPCuong_ProductQuestionAndAnswer::question.phtml" cacheable="false">
+            </block>
+          
+	</container>
+    </referenceContainer>  
+    <move element="family" destination="product.info.details.container" after="product.info.details"/>
+    <move element="catalog.product.related" destination="questions_holder" after="review.desktop"/>
+    <move element="questions_holder" destination="product.info.details.container" after="-" />
+    <referenceBlock name="product.info.sku" remove="true" />
+    <referenceBlock name="product.info.simple" remove="true" />
+    <referenceContainer name="product.info.stock.sku"> 
+    <block class="Venice\Product\Block\SimilarProduct" name="product.similar" template="Venice_Product::SimilarProduct.phtml" />
+    </referenceContainer>
+	
+	<!--<referenceBlock name="review.desktop" remove="true" />
+	<referenceBlock name="catalog.product.related" remove="true" />-->
+	
+	
+	
+    <referenceBlock name="product.price.final" remove="true" />
+    <referenceBlock name="page.main.title" remove="true" />
+    <referenceBlock name="product.info.review" remove="true" />
+    <referenceBlock name="product.info.addtocart" remove="true" />
+    <referenceContainer name="product.info.form.content" remove="true" />
+    <referenceBlock name="view.addto.compare" remove="true" />
+    <referenceBlock name="view.addto.wishlist" remove="true" />
+    <referenceBlock name="product.info.details">
+            <block class="Magento\Review\Block\Product\View\ListView" name="review.mobile" as="review_mobile" template="Magento_Review::product/view/list.phtml" group="detailed_info">
+                <arguments>
+                    <argument name="title" translate="true" xsi:type="string">Reviews</argument>
+                    <argument name="priority" xsi:type="string">4</argument>
+                </arguments>
+            </block>
+    </referenceBlock>
+</page>
+

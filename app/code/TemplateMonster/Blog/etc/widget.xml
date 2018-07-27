@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="tm_blog_post_list" class="TemplateMonster\Blog\Block\Widget\PostList" placeholder_image="TemplateMonster_Blog::images/widget_post_list.png">
+        <label translate="true">Blog Latest Posts</label>
+        <description translate="true">List of latest posts</description>
+        <parameters>
+            <parameter name="widget_status" xsi:type="select" visible="true" sort_order="1" source_model="Magento\Config\Model\Config\Source\Enabledisable">
+                <label translate="true">Status</label>
+                <description translate="true">Enable/Disable widget</description>
+            </parameter>
+            <parameter name="is_amp" xsi:type="select" visible="true" source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">AMP</label>
+                <description translate="true">"YES" If you create widget for AMP version</description>
+            </parameter>
+            <parameter name="title" xsi:type="text" visible="true">
+                <label translate="true">Title</label>
+                <description translate="true">Blog widget title</description>
+            </parameter>
+            <parameter name="post_title_length" xsi:type="text" visible="true">
+                <label translate="true">Post title length</label>
+                <description translate="true">Specify the length of the post title (e.g. 14, 20, 23). Leave empty not to truncate titles.</description>
+            </parameter>
+            <parameter name="post_desc_length" xsi:type="text" visible="true">
+                <label translate="true">Post description length</label>
+                <description translate="true">Specify the length of the post description (e.g. 60, 80, 100). Leave empty not to truncate description.</description>
+            </parameter>
+            <parameter name="post_amount" xsi:type="text" visible="true">
+                <label translate="true">Post amount</label>
+                <description translate="true">Amount of posts to display</description>
+            </parameter>
+            <parameter name="post_amount_per_row" xsi:type="text" visible="true">
+                <label translate="true">Post amount per row</label>
+                <description translate="true">Amount of posts per row</description>
+                <depends>
+                    <parameter name="is_enable_carousel" value="0"/>
+                </depends>
+            </parameter>
+            <parameter name="is_enable_carousel" xsi:type="select" visible="true" source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Enable carousel</label>
+                <description translate="true">Turn on to enable carousel</description>
+            </parameter>
+            <parameter name="post_amount_per_view" xsi:type="text" visible="true">
+                <label translate="true">Post amount per view</label>
+                <description translate="true">Amount of posts per view</description>
+                <depends>
+                    <parameter name="is_enable_carousel" value="1"/>
+                    <parameter name="is_amp" value="0" />
+                </depends>
+            </parameter>
+            <parameter name="post_img_height" xsi:type="text" visible="true" required="true">
+                <label>AMP Post Image Height</label>
+                <description translate="true">Enter post image height (if you use carousel you set image ratio).</description>
+                <depends>
+                    <parameter name="is_amp" value="1" />
+                </depends>
+                <value>120</value>
+            </parameter>
+            <parameter name="post_img_width" xsi:type="text" visible="true" required="true">
+                <label>AMP Post Image Width</label>
+                <description translate="true">Enter post image width (if you use carousel you set image ratio).</description>
+                <depends>
+                    <parameter name="is_amp" value="1" />
+                </depends>
+                <value>120</value>
+            </parameter>
+            <parameter name="template" xsi:type="select" visible="true">
+                <label translate="true">Template</label>
+                <description translate="true">Template to use</description>
+                <options>
+                    <option name="default" value="widget/post_list.phtml" selected="true">
+                        <label translate="true">Post list</label>
+                    </option>
+                    <option name="grid" value="widget/post_grid.phtml">
+                        <label translate="true">Post grid</label>
+                    </option>
+                    <option name="column_template" value="widget/post_column.phtml">
+                        <label translate="true">Column Template</label>
+                    </option>
+                    <option name="amp" value="widget/post_amp.phtml">
+                        <label translate="true">Post AMP</label>
+                    </option>
+                </options>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

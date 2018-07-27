@@ -1,0 +1,113 @@
+<?php
+/** @var \Venice\Product\Block\SimilarProduct $block */
+$collection = $block->getSimilarProducts(5,1);
+$product = $block->getCurrentProduct();
+$tags = $product->getAttributeText('product_tag')?$product->getAttributeText('product_tag'):[];
+$stockItem = $block->getStockItem($product->getId());
+$price = $product->getPrice();
+$retail_price = $product->getRetailPrice();
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance(); 
+$priceHelper = $objectManager->create('Magento\Framework\Pricing\Helper\Data'); 
+$discount=0;
+if(isset($retail_price)){
+    $discount = intval(100 - (($price/$retail_price)*100));
+}
+$formatted_retail_price= $priceHelper->currency($retail_price, true, false);
+$formatted_final_price = $priceHelper->currency($price,true,false);
+?>
+
+<?php 
+
+    $reviewHtml = $this->getLayout()
+                 ->createBlock("Magento\Catalog\Block\Product\View")
+                 ->setTemplate("Magento_Catalog::product/view/review.phtml")
+                 ->toHtml();
+
+    $addToCartBlock = $this->getLayout()
+                ->createBlock("Magento\Catalog\Block\Product\View")
+                ->setTemplate("Magento_Catalog::product/view/addtocart.phtml");
+
+    $cartFormBlock = $this->getLayout()
+                ->createBlock("Magento\Catalog\Block\Product\View")
+                ->setTemplate("Magento_Catalog::product/view/form.phtml")
+		->setChild('product_info_form_content',$addToCartBlock);
+
+    $addToCartHtml = $cartFormBlock->toHtml();
+
+    $wishlistHtml =  $this->getLayout()
+                ->createBlock("Magento\Wishlist\Block\Catalog\Product\View\AddTo\Wishlist")
+                ->setTemplate("Magento_Wishlist::catalog/product/view/addto/wishlist.phtml")
+                ->toHtml();
+
+    $compareHtml = $this->getLayout()
+                ->createBlock("Magento\Catalog\Block\Product\View\AddTo\Compare")
+                ->setTemplate("Magento_Catalog::product/view/addto/compare.phtml")
+                ->toHtml();
+?>
+
+<div class="product-overview">
+    <div class="product-condition">
+        <span class="ws-<?php echo $product->getAttributeText('condition')?>"><?php echo $product->getAttributeText('condition')?></span>
+    </div>
+    <div class="product-item-brand">
+        <span class="brand_name"><?php echo $product->getAttributeText('brand_id') ?></span>
+    </div>
+    <h1 class="page-title">
+        <span><?php echo $product->getName() ?></span>
+    </h1>
+    <div class="product-item-sku">
+        <span>Item no.<?php echo $product->getSku() ?></span>
+    </div>
+    
+    <div class="product-item-tag">       
+        <?php foreach($tags as $tag) :?>
+            <?php $temptag = str_replace(' ','-',$tag) ?>
+            <span class="ws-<?php echo $temptag?>"><?php echo $tag?></span>
+        <?php endforeach;?>
+    </div>
+    <?php echo $reviewHtml?>
+    <?php echo $wishlistHtml?>
+    <?php echo $compareHtml?>
+    <div class="price-cart">
+        <?php if(isset($retail_price)):?>
+            <div class="msrp-box">
+                <span><?php echo __('Retail : ');?><span><?php echo $formatted_retail_price ?></span></span>
+            </div> 
+        <?php endif;?>
+        <div class="price-gp">
+            <span><?php echo $formatted_final_price ?></span>
+        </div> 
+        <?php if($discount>0):?>
+            <div class="discount-box">
+                <span class="keyword">Save</span>
+                <span class="rate"><?php echo $discount ?>%</span>
+            </div>      
+        <?php endif;?>
+        <?php if($stockItem->getIsInStock()): ?>
+             <div class="stock-type isStock">
+                <?php echo __("In Stock") ?>
+            </div>
+            <?php echo $addToCartHtml?>
+        <?php else: ?>
+            <div class="stock-type isOutOfStock">
+                <?php echo __("Out Of Stock") ?>
+            </div>
+        <?php endif; ?>
+    </div>
+</div>
+<?php if (count($collection)):?>
+<div class="similar-collection-container">
+    <span>Similar Items:</span>
+    <ol class="clearfix similar-collection">
+        <?php foreach($collection as $product):?>
+            <li class="similar-item">                    
+                <a href="<?php echo $product->getProductUrl()?>">            
+                    <img class="similar-product-image" src="<?php echo $block->getImage($product)?>"/>
+                </a>
+            </li>    
+        <?php endforeach; ?>
+    </ol>
+    <a href="#">View More <i class="fa fa-angle-right" aria-hidden="true"></i>
+</a>
+</div>
+<?php endif ?>

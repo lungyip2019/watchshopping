@@ -1,0 +1,48 @@
+
+<?php
+$order = $block->getOrder();
+?>
+
+<div class="order-details">
+    <div class="header page-title">
+        <strong>Order Details</strong>
+    </div>
+    <div class="content>">
+        <div class="order-number">
+            <span class="label">Order #</span><span class="order-status"><?= $order->getRealOrderId()?></span>
+        </div>
+        <div class="order-date">
+            <?= /* @escapeNotVerified */ __('<span class="label">Order Date:</span> %1', '<date>' . $block->formatDate($block->getOrder()->getCreatedAt(), \IntlDateFormatter::LONG) . '</date>') ?>
+        </div>
+        <div class="order-status">
+            <span class="label">Status:</span><span> <?= /* @escapeNotVerified */ $order->getStatusLabel() ?></span> |
+            <span class="shipment>"<a href="#" class="action track"
+               data-mage-init='{"popupWindow": {"windowURL":"<?= /* @escapeNotVerified */ $block->getWindowUrl($order) ?>","windowName":"trackorder","width":800,"height":600,"left":0,"top":0,"resizable":1,"scrollbars":1}}'>
+                <span><?= /* @escapeNotVerified */ __('Track this shipment') ?></span>
+            </a>
+            </span>
+        </div>
+        <div class="actions">
+            <div class="recorder-button">
+            <?php if ($this->helper('Magento\Sales\Helper\Reorder')->canReorder($order->getEntityId())) : ?>
+                <a href="#" data-post='<?php /* @escapeNotVerified */ echo
+                $this->helper(\Magento\Framework\Data\Helper\PostHelper::class)
+                    ->getPostData($block->getReorderUrl($order))
+                ?>' class="action order">
+                    <span><?= /* @escapeNotVerified */ __('Reorder') ?></span>
+                </a>
+            <?php endif ?>
+            </div>
+            <div class="print-button">
+            <a class="action print"
+               href="<?= /* @escapeNotVerified */ $block->getPrintUrl($order) ?>"
+               onclick="this.target='_blank';">
+                <span><?= /* @escapeNotVerified */ __('Print Order') ?></span>
+            </a>
+            </div>
+            <?= $block->getChildHtml() ?>
+        </div>
+
+    </div>
+
+</div>

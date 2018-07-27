@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="sidebar.additional">
+            <block class="TemplateMonster\ShopByBrand\Block\Brand\Sidebar"
+                   name="brand.sidebar"
+                   before="catalog.compare.sidebar"
+                   template="TemplateMonster_ShopByBrand::brand/sidebar.phtml">
+            </block>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,155 @@
+block_id,title,identifier,content,creation_time,update_time,is_active
+11,block_1_layout_2,block_1_layout_2,"<div class=""row border-item"">
+    <div class=""col-sm-4"">
+        <div class=""custom-item-4"">
+            <img src=""{{view url=''}}/images/media/img_6_layout_2.jpg""/>
+            <div class=""custom-item-content"">
+                <div class=""title-1"">Sexy collections</div>
+                <a class=""link-custom"" href=""{{store url=''}}bras-bralettes.html"">Shop now!</a>
+            </div>
+        </div>
+    </div>
+    <div class=""col-sm-4"">
+        <div class=""custom-item-4 extra"">
+            <img src=""{{view url=''}}/images/media/img_7_layout_2.jpg""/>
+            <div class=""custom-item-content"">
+                <div class=""title-1"">Sale</div>
+                <div class=""desc-1"">Get up to</div>
+                <div class=""slog-1"">50% Off</div>
+                <a class=""link-custom"" href=""{{store url=''}}lingerie.html"">Shop now!</a>
+            </div>
+        </div>
+    </div>
+    <div class=""col-sm-4"">
+        <div class=""custom-item-4"">
+            <img src=""{{view url=''}}/images/media/img_8_layout_2.jpg""/>
+            <div class=""custom-item-content"">
+                <div class=""title-1"">Modern lingerie</div>
+                <a class=""link-custom"" href=""{{store url=''}}beauty.html"">Shop now!</a>
+            </div>
+        </div>
+    </div>
+</div>",2016-10-18 21:07:20,2016-10-18 21:07:20,1
+12,block_2_layout_2,block_2_layout_2,"<div class=""border-item"">
+    <div class=""custom-item-5"">
+        <div class=""custom-item-content"">
+            <div class=""banner-label"">New!</div>
+            <div class=""title-1"">Swim Collection 15% Off Beach Essentials</div>
+            <div class=""desc-1"">We sell not only top quality products, but give our customers a positive online shopping experience.</div>
+            <a class=""link-custom"" href=""{{store url=''}}sale-specials.html"">Shop now!</a>
+        </div>
+        <div class=""custom-img-content"">
+            <img src=""{{view url=''}}/images/media/img_9_layout_2.jpg""/>
+        </div>
+    </div>
+</div>",2016-10-18 21:15:49,2016-10-25 18:25:38,1
+13,block_3_layout_2,block_3_layout_2,"<div class=""row border-none"">
+    <div class=""col-sm-6"">
+        <div class=""custom-item-6"">
+            <img src=""{{view url=''}}/images/media/img_10_layout_2.jpg""/>
+            <div class=""custom-item-content"">
+                <div class=""desc-1"">New season trends!</div>
+                <div class=""title-1"">Get ready for Summer!</div>
+                <a class=""link-custom"" href=""{{store url=''}}lingerie.html"">Shop now</a>
+            </div>
+        </div>
+    </div>
+    <div class=""col-sm-6"">
+        <div class=""custom-item-6"">
+            <img src=""{{view url=''}}/images/media/img_11_layout_2.jpg""/>
+            <div class=""custom-item-content"">
+                <div class=""title-1"">Personalized Bra  Fittings</div>
+                <div class=""desc-1"">for Women of all Sizes </div>
+                <a class=""link-custom"" href=""{{store url=''}}sleep.html"">Shop now</a>
+            </div>
+        </div>
+    </div>
+</div>
+",2016-10-19 14:36:57,2016-10-19 14:42:37,1
+14,menu_block_2,menu_block_2,"<div class=""mm-text"">
+    Find your perfect fit with silhouettes designed for both function and fashion. Magetique offers an extensive range of styles including soft bras, bandeaus, strapless bras and underwire bras.
+</div>",2016-10-25 13:58:10,2016-10-25 13:58:10,1
+15,menu_block_3,menu_block_3,"<div class=""menu-block-3"">
+    <a class=""menu-banner"" href=""{{store url=''}}lingerie.html"">
+        <img src=""{{view url=''}}/images/media/img_12_layout_2.jpg""/>
+    </a>
+    <a class=""menu-banner"" href=""{{store url=''}}sleep.html"">
+        <img src=""{{view url=''}}/images/media/img_13_layout_2.jpg""/>
+    </a>
+</div>",2016-10-25 14:32:14,2016-10-25 14:32:14,1
+23,block_4_2_layout_2,block_4_2_layout_2,"<div class=""row custom-item-indent"">
+    <div class=""col-sm-6"">
+        <div class=""custom-item-11 extra-color"">
+            <img src=""{{view url=''}}/images/media/img_22_lingeria.jpg""/>
+            <div class=""custom-item-content"">
+                <div class=""title-1"">Bras</div>
+                <div class=""desc-1"">New Season Trends!</div>
+                <a class=""link-custom"" href=""{{store url=''}}lingerie.html"">Shop now</a>
+            </div>
+        </div>
+    </div>
+    <div class=""col-sm-6"">
+        <div class=""custom-item-11"">
+            <img src=""{{view url=''}}/images/media/img_23_lingeria.jpg""/>
+            <div class=""custom-item-content"">
+                <div class=""title-1"">Panties</div>
+                <div class=""desc-1"">New Season Trends!</div>
+                <a class=""link-custom"" href=""{{store url=''}}panties.html"">Shop now</a>
+            </div>
+        </div>
+    </div>
+    <div class=""col-sm-6"">
+        <div class=""custom-item-11"">
+            <img src=""{{view url=''}}/images/media/img_24_lingeria.jpg""/>
+            <div class=""custom-item-content"">
+                <div class=""title-1"">Sexy</div>
+                <div class=""desc-1"">New Season Trends!</div>
+                <a class=""link-custom"" href=""{{store url=''}}lingerie.html"">Shop now</a>
+            </div>
+        </div>
+    </div>
+    <div class=""col-sm-6"">
+        <div class=""custom-item-11 extra-color"">
+            <img src=""{{view url=''}}/images/media/img_25_lingeria.jpg""/>
+            <div class=""custom-item-content"">
+                <div class=""title-1"">Sleep</div>
+                <div class=""desc-1"">New Season Trends!</div>
+                <a class=""link-custom"" href=""{{store url=''}}sleep.html"">Shop now</a>
+            </div>
+        </div>
+    </div>
+</div>
+",2016-12-19 04:37:03,2016-12-19 04:52:14,1
+24,block_5_2_layout_2,block_5_2_layout_2,"<div class=""custom-item-12"">
+    <div class=""custom-item-content"">
+        <div class=""desc-1"">New Season Trends!</div>
+        <div class=""title-1"">Personalized Bra Fittings</div>
+        <a class=""link-custom"" href=""{{store url=''}}lingerie.html"">Shop now!</a>
+    </div>
+    <div class=""custom-img-content"">
+        <img src=""{{view url=''}}/images/media/img_26_lingeria.jpg""/>
+    </div>
+</div>",2016-12-19 07:11:07,2016-12-19 07:11:07,1
+25,block_6_2_layout_2,block_6_2_layout_2,"<ul class=""custom-item-13 row"">
+    <li class=""col-sm-4"">
+        <div class=""custom-content"">
+            <span class=""icon-telephone""></span>
+            <div class=""title"">+3(800) 2345-6789</div>
+            <div class=""desc-content"">Round-the-clock free hotline (24/7)</div>
+        </div>
+    </li>
+    <li class=""col-sm-4"">
+        <div class=""custom-content"">
+            <span class=""icon-truck""></span>
+            <div class=""title"">Free Shipping</div>
+            <div class=""desc-content"">Shipping cost for any delivery method and order cost <br /> is $49. Free delivery on orders of $99.</div>
+        </div>
+    </li>
+    <li class=""col-sm-4"">
+        <div class=""custom-content"">
+            <span class=""icon-sync""></span>
+            <div class=""title"">Return & Exchange</div>
+            <div class=""desc-content"">You can return or exchange the item <br />within 30 days.</div>
+        </div>
+    </li>
+</ul>",2016-12-19 09:42:47,2016-12-19 10:10:09,1

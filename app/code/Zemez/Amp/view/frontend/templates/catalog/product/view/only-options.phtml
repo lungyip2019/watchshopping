@@ -1,0 +1,34 @@
+<script type="text/javascript">
+require(["jquery"], function($){
+//<![CDATA[
+    var userAgent = navigator.userAgent.toLowerCase();
+    var isSafari = ((userAgent.indexOf('safari') != -1)
+        && (userAgent.indexOf('chrome') == -1)
+    ) ? true : false;
+    var sameOrigin = false;
+
+    if (isSafari) {
+        try {
+            sameOrigin = !parent.window.location.href ? false : true;
+        } catch (e) { console.log(e); }
+
+        if (!sameOrigin) {
+            backUrl = window.location.href.replace(/only-options=\d+/gi,"amp=33");
+
+            var form = $('#product_addtocart_form');
+            var href = form.get(0).action;
+            href += (href.indexOf('?') === -1) ? '?' : '&';
+
+            form.unbind('submit');
+            form.on('submit', function(){
+                href += $(this).serialize() + '&backUrl=' + encodeURI(backUrl);
+
+                setTimeout(function(){window.location.reload()}, 3000);
+                window.open(href, '_blank');
+                return false;
+            });
+        }
+    }
+//]]>
+});
+</script>

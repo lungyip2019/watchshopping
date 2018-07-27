@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="footer" htmlClass="page-footer layout_1" />        
+        <referenceContainer name="footer.grid-col1" htmlClass="col-sm-4 col-lg-2"/>
+        <referenceContainer name="footer.grid-col2" htmlClass="col-sm-4 col-lg-2"/>
+        <referenceContainer name="footer.grid-col3" htmlClass="col-sm-4 col-lg-2"/>
+        <referenceContainer name="footer.grid-col4" htmlClass="col-sm-4 col-lg-2"/>
+		<!-- <referenceBlock name="copyright" remove="true"/>-->
+		<referenceContainer name="header-wrapper.grid-container">
+		<container name="footer_copyright_menu.wrapper" htmlClass="footer_copyright_menu" htmlTag="div" after="-">
+                <block class="Magento\Cms\Block\Block" name="footer_copyright_menu">
+                  <arguments>
+                    <argument name="block_id" xsi:type="string">footer_copyright_menu</argument>
+                  </arguments>
+                  </block>
+              </container>
+			</referenceContainer>
+			<!--<referenceBlock name="copyright" remove="true"/>-->
+			<move element="footer_copyright_menu"  destination="footer.callout" after="-"/>
+	<referenceBlock name="footer_links" remove="true"/>
+    </body>
+</page>

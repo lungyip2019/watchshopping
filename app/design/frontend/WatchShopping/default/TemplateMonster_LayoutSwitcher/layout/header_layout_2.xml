@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header-wrapper.grid-container" htmlClass="container"/>
+		<!--<referenceContainer name="header.panel" remove="true"/>
+	  <referenceContainer name="logo" remove="true"/>
+	  <referenceContainer name="ad1.wrapper" remove="true"/>
+	   <referenceContainer name="top_message_wrapper" remove="true"/> -->
+		<referenceContainer name="ad1.wrapper" htmlClass="ad1-wrapper container"/>
+		<move element="header.panel" destination="header.container" before="rd.navbar-wrap" />
+		<move element="logo" destination="ad1.wrapper" before="-" />
+		<move element="ad1.wrapper" destination="header.container" after="header.panel" />
+		<move element="top_message_wrapper" destination="ad1.wrapper" after="ad1.wrapper" />
+		
+		
+		
+    </body>
+</page>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="product.info.description">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">TemplateMonster_Blog::product/related_posts.phtml</argument>
+            </action>
+            <!--<arguments>
+                <argument name="template" xsi:type="string">TemplateMonster_Blog::product/related_posts.phtml</argument>
+            </arguments>-->
+        </referenceBlock>
+    </body>
+</page>

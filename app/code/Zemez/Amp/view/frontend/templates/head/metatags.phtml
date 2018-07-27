@@ -1,0 +1,4 @@
+<?php foreach ($block->getTmParams() as $key => $content) { ?>
+	<?php if (!trim($content)) continue; ?>
+		<meta property="og:<?php echo $block->escapeHtml($key) ?>" content="<?php echo $block->escapeHtml($content) ?>"/>
+<?php } ?>

@@ -1,0 +1,27 @@
+<?php if ($detailedInfoGroup = $block->getGroupChildNames('detailed_info', 'getChildHtml')): ?>
+    <div class="product info detailed">
+        <?php $layout = $block->getLayout(); ?>
+        <div class="product data items">
+            <amp-accordion id="product-data-tabs">
+                <?php /* Sorting group elements by name before rendering */ sort($detailedInfoGroup) ?>
+                <?php foreach ($detailedInfoGroup as $key => $name):?>
+                    <?php
+                        $html = $layout->renderElement($name);
+                        if (!trim($html)) {
+                            continue;
+                        }
+                        $alias = $layout->getElementAlias($name);
+                        $label = $block->getChildData($alias, 'title');
+                        $alias = str_replace('.', '-', $alias);
+                    ?>
+                    <section <?php echo ($key == 0) ? "expanded" : "" ?> id="section-<?php echo $alias; ?>">
+                        <header class="items-block-heading"><?php echo $label; ?></header>
+                        <div class="tab-content" id="<?php echo $alias; ?>">
+                            <?php echo $html; ?>
+                        </div>
+                    </section>
+                <?php endforeach;?>
+            </amp-accordion>
+        </div>
+    </div>
+<?php endif; ?>

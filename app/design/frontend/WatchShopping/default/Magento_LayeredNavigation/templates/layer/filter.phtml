@@ -1,0 +1,41 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+
+<?php
+
+/**
+ * Template for filter items block
+ * @var $block \Magento\LayeredNavigation\Block\Navigation\FilterRenderer
+ */
+
+?>
+
+<?php $numItems = sizeOf($filterItems)?>
+<ul class="<?=$numItems >= 10 ? 'attributes hidden scroll-attributes' : 'attributes hidden'?>">
+    <?php foreach ($filterItems as $filterItem): ?>
+        <li class="attribute">
+            <?php if ( $numItems > 0): ?>
+		    <a href="<?php echo $filterItem->isActive()?$block->escapeUrl($filterItem->getRemoveUrl()):$block->escapeUrl($filterItem->getUrl()) ?>">
+		    <i data-id="<?php echo $filterItem->getValueString() ?>"  class="item-checkbox <?php echo $filterItem->isActive()?"fa fa-check-square-o":"fa fa-square-o"?>"></i><span class="attribute-label"><?php /* @escapeNotVerified */ echo $filterItem->getLabel() ?></span>
+		    <?php if ($this->helper('\Magento\Catalog\Helper\Data')->shouldDisplayProductCountOnLayer()): ?>
+                        <span class="count">(<?php /* @escapeNotVerified */ echo $filterItem->getCount()?>)</span>
+                    <?php endif; ?>
+                </a>
+            <?php else:?>
+                <span class="attribute-label"><?php /* @escapeNotVerified */ echo $filterItem->getLabel() ?></span>
+                <?php if ($this->helper('\Magento\Catalog\Helper\Data')->shouldDisplayProductCountOnLayer()): ?>
+                    <span class="count">(<?php /* @escapeNotVerified */ echo $filterItem->getCount()?>)</span>
+                <?php endif; ?>
+            <?php endif; ?>
+        </li>
+    <?php endforeach ?>
+</ul>
+
+

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <mageworx_seo>
+            <markup>
+                <richsnippet>
+                    <product>
+                        <rs_enabled>1</rs_enabled>
+                    </product>
+                    <category>
+                        <rs_enabled>1</rs_enabled>
+                        <og_enabled>1</og_enabled>
+                        <robots_restriction>1</robots_restriction>
+                    </category>
+                    <landingpage>
+                        <rs_enabled>1</rs_enabled>
+                        <og_enabled>1</og_enabled>
+                        <robots_restriction>1</robots_restriction>
+                    </landingpage>
+                    <website>
+                        <rs_enabled>1</rs_enabled>
+                        <og_enabled>1</og_enabled>
+                    </website>
+                    <breadcrumbs>
+                        <rs_enabled>1</rs_enabled>
+                    </breadcrumbs>
+                </richsnippet>
+            </markup>
+        </mageworx_seo>
+    </default>
+</config>

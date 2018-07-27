@@ -1,0 +1,22 @@
+
+<?php
+$_product = $block->getCurrentProduct();
+$_categriesArrays = $_product->getExtensionAttributes()->getCategoryLinks();
+?>
+
+<div class="block block-product-findmore">
+    <div class="block-title title">
+        <strong>Find More</strong>
+    </div>
+    <div class="block-content">
+		 <div class="item-categories">
+        <?php foreach ($_categriesArrays as $categriesArray): ?>
+           
+                <?php echo $block->getCategoryName($categriesArray->getCategoryId()); ?>
+                <?php if(next($_categriesArrays)) echo ' / '; ?>
+           
+        <?php endforeach; ?>
+			  </div>
+    </div>
+</div>
+

@@ -1,0 +1,16 @@
+<?php /** @var $block \Magento\Catalog\Block\Product\Image */ ?>
+
+<?php
+	$src = $block->getImageUrl();
+	$width = $block->getWidth();
+	$height = $block->getHeight();
+?>
+<?php if ($src && $width && $height) : ?>
+	<amp-img class="photo image"
+	     <?php echo $block->getCustomAttributes(); ?>
+	     src="<?php echo $src ?>"
+	     width="<?php echo $width ?>"
+	     height="<?php echo $height ?>"
+	     alt="<?php echo $block->stripTags($block->getLabel(), null, true); ?>">
+	</amp-img>
+<?php endif; ?>

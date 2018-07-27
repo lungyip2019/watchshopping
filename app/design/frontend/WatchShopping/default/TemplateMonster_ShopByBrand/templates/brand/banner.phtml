@@ -1,0 +1,16 @@
+<?php
+/** @var \TemplateMonster\ShopByBrand\Block\Brand\View $block */
+
+$helper = $block->getHelper();
+$brand  = $block->getCurrentBrand();
+?>
+
+<?php if ($helper->isShowBrandBanner() && $brand->getBrandBanner()): ?>
+    <div class="category-brand-banner">
+		<!--<img src="<?php  echo $helper->resizeImageUrl($brand->getBrandBanner(), 1050, null, 'banner'); ?>" alt="<?php echo $block->escapeHtml($brand->getName()) ?>" />-->
+		<div class="brand-banner-bg" style="background:url(<?php  echo $helper->resizeImageUrl($brand->getBrandBanner(), 1050, null, 'banner'); ?>) no-repeat left top /auto 100%">
+			<h2 class="banner-title"><?php echo $block->escapeHtml($brand->getName()) ?></h2>
+			<p class="banner-content"><?php echo $block->escapeHtml($brand->getShortDescription()) ?></p>
+		</div>
+    </div>
+<?php endif; ?>

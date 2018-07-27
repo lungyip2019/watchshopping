@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <script src="https://www.google.com/recaptcha/api.js" src_type="url"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="TemplateMonster\Blog\Block\Post\View" name="blog.post" template="TemplateMonster_Blog::post/view.phtml">
+                <block class="Magento\Framework\View\Element\Template"
+                       name="blog.social.sharing"
+                       template="TemplateMonster_Blog::post/social_sharing/social_sharing.phtml"
+                       ifconfig="tm_blog/social_sharing/general/enabled">
+                    <block class="TemplateMonster\Blog\Block\Post\SocialSharing\AddThis\Icons" name="blog.social.sharing.icons" as="social_sharing_icons" />
+                </block>
+                <block class="TemplateMonster\Blog\Block\Post\View\Comments" name="blog.post.comments" as="comments" template="TemplateMonster_Blog::post/view/comments.phtml" />
+                <block class="TemplateMonster\Blog\Block\Post\View\Products" name="blog.post.products" as="products"  template="TemplateMonster_Blog::post/view/products.phtml" />
+                <block class="TemplateMonster\Blog\Block\Post\View\Posts" name="blog.post.posts" as="posts"  template="TemplateMonster_Blog::post/view/posts.phtml" />
+            </block>
+        </referenceContainer>
+        <referenceContainer name="sidebar.additional">
+            <block class="TemplateMonster\Blog\Block\Sidebar\Categories" name="blog.categories.sidebar"
+                   template="TemplateMonster_Blog::sidebar/categories.phtml"
+                   ifconfig="tm_blog/sidebar/show_categories">>
+            </block>
+            <block class="TemplateMonster\Blog\Block\Sidebar\Posts" name="blog.posts.sidebar"
+                   template="TemplateMonster_Blog::sidebar/posts.phtml"
+                   ifconfig="tm_blog/sidebar/show_posts">
+            </block>
+            <block class="TemplateMonster\Blog\Block\Sidebar\Comments" name="blog.comments.sidebar"
+                   template="TemplateMonster_Blog::sidebar/comments.phtml"
+                   ifconfig="tm_blog/sidebar/show_comments">
+            </block>
+        </referenceContainer>
+        <referenceContainer name="before.body.end">
+            <block class="TemplateMonster\Blog\Block\Post\SocialSharing\AddThisInit"
+                   name="social.sharing.init"
+                   ifconfig="tm_blog/social_sharing/general/enabled" />
+        </referenceContainer>
+        <move element="page.main.title" destination="main" before="-" />
+    </body>
+</page>

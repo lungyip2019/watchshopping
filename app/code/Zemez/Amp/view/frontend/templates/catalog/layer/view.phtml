@@ -1,0 +1,49 @@
+<?php
+/**
+ * Category layered navigation
+ *
+ * @var $block \Magento\LayeredNavigation\Block\Navigation
+ */
+?>
+
+<?php if ($block->canShowBlock()): ?>
+    <div class="block filter">
+        <div class="block-title filter-title hide">
+            <strong><?php echo __('Shopping Options') ?></strong>
+        </div>
+        <div class="block-content filter-content">
+
+            <button class="block-subtitle filter-subtitle" on="tap:narrow-by-list">Filter</button>
+            <amp-lightbox id="narrow-by-list" layout="nodisplay" scrollable>
+            <div class="top-of-lightbox">
+            <h3>Filter</h3>
+                <a on="tap:narrow-by-list.close" role="button" tabindex="0" class="filter-close-btn"><span>Close filter</span><i class="material-icon material-icons-close"></i></a>
+            </div>
+                        
+            <div class="active-filter">
+                <?php echo $block->getChildHtml('state') ?>
+                <?php if ($block->getLayer()->getState()->getFilters()): ?>
+                    <div class="block-actions filter-actions">
+                        <a href="<?php echo $block->getClearUrl() ?>" class="action clear filter-clear">
+                            <span><?php echo __('Clear All') ?></span>
+                        </a>
+                    </div>
+                <?php endif; ?>
+            </div>
+            <ul class="filter-options">
+                <?php foreach ($block->getFilters() as $key => $filter): ?>
+                    <?php if ($filter->getItemsCount()): ?>
+                        <li>
+                            <input type="checkbox" id="filter-item-<?php echo $key ?>"/>
+                            <label for="filter-item-<?php echo $key ?>" class="filter-options-title">
+                                <?php echo $block->escapeHtml(__($filter->getName())) ?>
+                            </label>
+                            <?php echo $block->getChildBlock('render')->render($filter); ?>
+                        </li>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </ul>
+        </amp-lightbox>
+        </div>
+    </div>
+<?php endif; ?>

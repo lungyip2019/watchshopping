@@ -1,0 +1,34 @@
+<?php
+$comments = $this->getComments();
+if($comments->getItems()):
+    $titleLength = 40;
+    $commentLength = 60;
+?>
+<div class="block block-recent-comments">
+    <div class="block-title">
+        <strong><?php echo __('Recent Comments') ?></strong>
+    </div>
+    <div class="block-content">
+        <ul>
+            <?php foreach ($comments as $comment):
+                $title = $comment->getTitle();
+                $content = $comment->getContent(); ?>
+                <li>
+                    <p class="title-section">
+                        <strong class="material-icons-person">
+                            <?php echo $comment->getAuthor(); ?>
+                        </strong>
+                        <?php echo __('on'); ?>
+                        <a href="<?php echo $this->getPostUrl($comment); ?>">
+                            <?php echo mb_substr($title, 0, $titleLength); ?>
+                            <?php echo (mb_strlen($title) > $titleLength) ? '...' : '' ?>
+                        </a>
+                    </p>
+                    <?php echo mb_substr($content, 0, $commentLength); ?>
+                    <?php echo (mb_strlen($content) > $commentLength) ? '...' : '' ?>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</div>
+<?php endif; ?>

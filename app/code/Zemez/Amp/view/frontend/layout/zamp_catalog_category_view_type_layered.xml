@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<page layout="tm_amp" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+  <body>
+    <referenceContainer name="amp.sidebar.main">
+      <block class="Zemez\Amp\Block\Catalog\Layer\Navigation\Category" name="catalog.leftnav" before="-" template="Zemez_Amp::catalog/layer/view.phtml">
+        <block class="Magento\LayeredNavigation\Block\Navigation\State" name="catalog.navigation.state" as="state" template="Zemez_Amp::catalog/layer/state.phtml"/>
+        <block class="Magento\LayeredNavigation\Block\Navigation\FilterRenderer" name="catalog.navigation.renderer" as="render" template="Zemez_Amp::catalog/layer/filter.phtml"/>
+      </block>
+    </referenceContainer>
+  </body>
+</page>

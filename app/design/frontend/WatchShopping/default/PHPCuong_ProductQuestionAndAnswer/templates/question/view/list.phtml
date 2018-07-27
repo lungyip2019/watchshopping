@@ -1,0 +1,140 @@
+<?php
+/**
+ * Copyright © 2013-2017 GiaPhuGroup Ltd. All rights reserved.
+ * See COPYING.txt for license details.
+ * $block \PHPCuong\ProductQuestionAndAnswer\Block\Product\View\ListView
+ */
+?>
+<?php $questions = $block->getQuestionProductList(); ?>
+<?php if (empty($questions['data'])): ?>
+<div class="box-question-list">
+        <div class="block-title">
+            <strong><?php echo __('Questions'); ?></strong>
+        </div>
+	<div class="qs-learn">
+	<span> Start typing your question and we'll check if it was already asked and answered.<a href="#">Learn More</a></span>
+		<a class="reply-on-answer btn-ask"  reply-on="answer" href="#"><?php echo __('ASK')?></a>
+	</div>
+</div>
+<?php endif; ?>
+<?php if (!empty($questions['data'])): ?>
+    <?php $nextQuestion = 'next-question'; ?>
+    <?php if ($questions['current_page'] == '1'): ?>
+        <?php $nextQuestion = ''; ?>
+    <div class="box-question-list">
+        <div class="block-title">
+            <strong><?php echo __('Questions'); ?></strong>
+        </div>
+	<div class="qs-learn">
+	<span> Start typing your question and we'll check if it was already asked and answered.<a href="#">Learn More</a></span>
+		<a class="reply-on-answer btn-ask" reply-on="answer" href="#"><?php echo __('ASK')?></a>
+	</div>
+    <?php endif; ?>
+        <div class="question-list <?php echo $nextQuestion; ?>" data-pagenum="<?php echo $questions['current_page']; ?>">
+            <ul class="parent">
+            <?php foreach ($questions['data'] as $question): ?>
+                <?php $like = ($question['likes'] > 0) ? $question['likes'] : ''; ?>
+                <?php $dislike = ($question['dislikes'] > 0) ? $question['dislikes'] : ''; ?>
+                <li>
+                    <div class="ws-question-gp">
+                    <p class="ws-question"><?php echo $question['title'];?></p>
+					<p class="table ws-ppl-info">
+						<small class="time"><?php echo __('Asked by'); ?> <?php echo $question['author_name'];?> <?php echo __('on'); ?> <?php echo $question['created_at'];?></small>
+                        <!--<span class="first-character"><?php echo $question['first_character'];?></span>
+                        <span class="author-name">
+                            <strong><?php echo $question['author_name'];?></strong>
+                            <small class="time"><?php echo __('Asked by'); ?> <?php echo $question['asked_by'];?> <?php echo __('on'); ?> <?php echo $question['created_at'];?></small>
+                        </span>-->
+                    </p>
+						</div>
+                    
+                    <ul class="answers">
+                        <?php if (empty($question['answers'])): ?>
+                            <li class="last-child"><p class="q-wait"><?php echo __('Our administrator will reply %1\'s question soon.', ucwords($question['author_name'])); ?></p></li>
+                        <?php endif; ?>
+                        <?php foreach ($question['answers'] as $answer): ?>
+                            <?php $like = ($answer['likes'] > 0) ? $answer['likes'] : ''; ?>
+                            <?php $dislike = ($answer['dislikes'] > 0) ? $answer['dislikes'] : ''; ?>
+                            <li>
+								 <p><?php echo $answer['content'];?></p>
+                                <p class="table ws-ppl-info">
+									<small class="time"><?php echo __('Answered by'); ?> <?php echo $answer['author_name'];?> <?php echo __('on'); ?> <?php echo $answer['created_at'];?></small>
+                                    <!--<span class="first-character"><?php echo $answer['first_character'];?></span>
+                                    <span class="author-name">
+                                        <strong><?php echo $answer['author_name'];?></strong>
+                                        <small class="time"><?php echo __('Answered by'); ?> <?php echo $answer['answered_by'];?> <?php echo __('on'); ?> <?php echo $answer['created_at'];?></small>
+                                    </span>-->
+                                </p>
+                               
+                                <ul class="reply" comment-id="<?php echo $answer['id']; ?>">
+                                    <?php if ($questions['allow_to_reply']): ?>
+                                        <!--<li title="<?php echo __('Reply'); ?>" reply-on="answer" class="reply-on-answer reply-on">-->
+                                        <!--<span><?php echo __('Reply'); ?></span>-->
+                                        <!--</li>-->
+                                    <?php endif; ?>
+                                    <li title="<?php echo __('Like'); ?>" like-on="answer" class="like" clicked="false" is="like">
+                                        <span>
+                                            <span class="number">
+                                                <?php echo $like;?>
+                                            </span>
+                                            <?php echo __('Like'); ?>
+                                        </span>
+                                    </li>
+                                    <li title="<?php echo __('Dislike'); ?>" dislike-on="answer" class="dislike" clicked="false" is="dislike">
+                                        <span>
+                                            <span class="number">
+                                                <?php echo $dislike;?>
+                                            </span>
+                                            <?php echo __('Dislike'); ?>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+					<ul class="reply question-parent" comment-id="<?php echo $question['id']; ?>">
+                        <?php if ($questions['allow_to_reply']): ?>
+                            <li title="<?php echo __('Reply'); ?>" reply-on="question" class="reply-on-question reply-on">
+                                <span><?php echo __('Add Answer'); ?></span>
+                            </li>
+                        <?php endif; ?>
+                    </ul>
+                </li>
+            <?php endforeach; ?>
+            </ul>
+        </div>
+        <?php if ($questions['current_page'] < $questions['total_page']): ?>
+            <div class="question-load-more">
+                <a href="<?php echo $questions['next_url']; ?>" data-previous-page="<?php echo $questions['current_page']; ?>">
+                    <span><?php echo __('Show 4 more Questions for this Product'); ?></span>
+                </a>
+                <img src="<?php echo $block->getViewFileUrl('PHPCuong_ProductQuestionAndAnswer::images/question-load-more.gif'); ?>" class="img-loading"/>
+            </div>
+        <?php endif; ?>
+        <?php if ($questions['current_page'] == '1'): ?>
+        </div>
+    <?php endif; ?>
+<?php endif; ?>
+<script>
+    require(
+        [
+            'jquery',
+            'Magento_Ui/js/modal/modal'
+        ],
+        function(
+            $,
+            modal
+        ) {
+            var options = {
+                type: 'popup',
+                responsive: true,
+                innerScroll: true,
+                title: 'Write your own question',
+		buttons: []
+            };
+
+            var popup = modal(options, $('.question-add'));
+
+        }
+    );
+</script>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<page layout="tm_amp" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+  <body>
+    <referenceBlock name="head.additional">
+      <referenceBlock name="ampcss">
+        <block class="Zemez\Amp\Block\Page\Head\Style" name="ampcss.category" as="ampcss.category" template="Zemez_Amp::head/css/category.phtml"/>
+      </referenceBlock>
+      <block class="Zemez\Amp\Block\Page\Head\Tm\Category" name="metatags" as="metatags" template="Zemez_Amp::head/metatags.phtml"/>
+      <block class="Zemez\Amp\Block\Page\Head\Json\Category" name="json" as="json" template="Zemez_Amp::head/ampjson.phtml"/>
+    </referenceBlock>
+
+    <referenceContainer name="amp.content">
+      <block class="Zemez\Amp\Block\Catalog\View" name="category.products" template="Zemez_Amp::catalog/category/products.phtml">
+        <block class="Magento\Catalog\Block\Product\ListProduct" name="category.products.list" as="amp_product_list" template="Zemez_Amp::catalog/product/list.phtml">
+          <container name="ttop.toolbar"/>
+          <block class="Magento\Catalog\Block\Product\ProductList\Toolbar" name="amp_product_list_toolbar" template="Zemez_Amp::catalog/product/list/toolbar.phtml">
+            <block class="Magento\Theme\Block\Html\Pager" name="product_list_toolbar_pager"/>
+          </block>
+          <action method="setToolbarBlockName">
+            <argument name="name" xsi:type="string">amp_product_list_toolbar</argument>
+          </action>
+          <action method="setListOrders"/>
+          <action method="setListModes"/>
+          <action method="setListCollection"/>
+        </block>
+      </block>
+    </referenceContainer>
+    <move element="amp.sidebar.main" destination="ttop.toolbar" before="-" />
+  </body>
+</page>

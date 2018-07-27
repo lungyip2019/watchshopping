@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 TemplateMonster. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="TemplateMonster_Blog::css/material-icons.css" />
+        <css src="TemplateMonster_Blog::css/blog.css" />
+    </head>
+    <body>
+        <referenceBlock name="top.links">
+            <block class="TemplateMonster\Blog\Block\Link" name="blog.link" template="TemplateMonster_Blog::link.phtml" after="-" />
+        </referenceBlock>
+    </body>
+</page>

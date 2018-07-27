@@ -1,0 +1,96 @@
+<?php
+/** @var \TemplateMonster\Blog\Block\Widget\PostList $block */
+$dateFormat = $this->getDateFormat();
+$ampCarouselHeight = $this->getAmpCarouselHeight(); 
+$ampImageHeight = $this->getPostImageHeight(); 
+$ampImageWidth = $this->getPostImageWidth(); 
+
+    $itemWidth = $block->getPostAmountPerRow();
+
+?>
+<?php $id_my_widget = rand(1,100); ?>
+
+<?php if ($posts = $this->getPosts()) : ?>
+    
+    <div class="block widget blog-posts widget-post-grid id-<?php echo $id_my_widget; ?>">
+        <div class="block-title">
+            <strong role="heading" aria-level="2"><?php echo __($block->getTitle()) ?></strong>
+        </div>
+        <div class="block-content">
+            <?php if ($block->isEnabledCarousel()): ?>
+                <amp-carousel id="post-carousel"
+                    class="post-items-carousel"
+                    height="<?= $ampImageHeight ?>"
+                    width="<?= $ampImageWidth ?>"
+                    type="slides"
+                    layout="responsive">
+            <?php else: ?>
+                <div class="post-items items-<?= $itemWidth ?>">
+            <?php endif; ?>
+
+            <?php foreach ($posts as $post): ?>
+                <div class="post-item">
+                    <div class="item-wrapper">
+                        <!-- Image -->
+                        <?php if ($image = $post->getImage()): ?>
+                        <div class="post-image">
+                            <a href="<?php echo $this->getPostUrl($post); ?>"><amp-img layout="responsive"  width="<?= $ampImageWidth ?>" height="<?= $ampImageHeight ?>" src="<?php echo $image ?>" /></amp-img></a>
+                        </div>
+                        <?php endif; ?>
+                        <?php if ($block->isEnabledCarousel()): ?>
+                            <div class="content-wrapper">
+                        <?php endif; ?>
+
+                        <!-- Title -->
+                        <div class="post-title">
+                            <h3>
+                                <a href="<?php echo $this->getPostUrl($post); ?>">
+                                    <?php echo $block->getStringTruncated($post->getTitle(), $block->getPostTitleLength()) ?>
+                                </a>
+                            </h3>
+                        </div>
+
+                        <!-- Short Description -->
+                        <div class="post-short-content">
+                            <?php echo $block->filterContent($block->getStringTruncated($post->getShortContent(), $block->getPostDescLength())); ?>
+                            <a href="<?php echo $this->getPostUrl($post); ?>" class="post-link">
+                                <?php /* @escapeNotVerified */ echo __('more'); ?>...
+                            </a>
+                        </div>
+
+                        <!-- Metadata -->
+                        <div class="post-data">
+                            <?php if ($post->getCommentsEnabled()) : ?>
+                                <span class="post-comments">
+                                    <a href="<?php echo $this->getPostUrl($post); ?>#post-comments">
+                                        <span class="count material-icons-chat_bubble_outline">
+                                            <?php echo $post->getApprovedComments()->count(); ?>
+                                        </span>
+                                    </a>
+                                </span>
+                            <?php endif; ?>
+                            <span class="create-date material-icons-access_time">
+                                <time><?php echo date($dateFormat, strtotime($post->getCreationTime()));?></time>
+                            </span>
+                            <?php if ($author = $post->getAuthor()): ?>
+                                <span class="post-author material-icons-person">
+                                    <span class="label"><?php echo __('by '); ?></span>
+                                    <span class="author"><?php echo $author; ?></span>
+                                </span>
+                            <?php endif; ?>
+                        </div>
+                        <?php if ($block->isEnabledCarousel()): ?>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+
+            <?php if ($block->isEnabledCarousel()): ?>
+                </amp-carousel>
+            <?php else: ?>
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
+<?php endif; ?>

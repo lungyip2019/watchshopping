@@ -1,0 +1,21 @@
+<?php
+    $url = $block->getReviewsUrl() . '#reviews';
+    $urlForm = $block->getReviewsUrl() . '#review-form';
+	$rating	= $block->getRatingSummary();
+?>
+<?php if ($block->getReviewsCount() && $rating) : ?>
+    <div class="product-review-summary<?php echo !$rating ? ' no-rating' : ''?>">
+		<div class="prod-rate-hld">
+			<div>
+				<?php $i = 0; while ($i < 100) :
+					$starClass = 'emptystar';
+					if ($i < $rating) {
+						$starClass = ($rating - $i < 12) ? 'halfstar' : 'fullstar';
+					}
+					$i = $i + 20; ?>
+					<div class="icon f-<?php echo $starClass ?>"></div>
+				<?php endwhile; ?>
+			</div>
+		</div>
+    </div>
+<?php endif; ?>

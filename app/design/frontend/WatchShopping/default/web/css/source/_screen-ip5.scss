@@ -1,0 +1,17 @@
+@import '_font';
+@import '_mixin';
+@import '_variable';
+
+@include mediaWidth($screen-ip5){
+	.catalog-product-view{
+
+		.layout_1{
+		
+			.product.media{
+				.fotorama__nav__frame.fotorama__nav__frame--thumb{width:56px!important;height:56px;}
+				
+			}
+		}
+	}
+	
+}

@@ -1,0 +1,39 @@
+<?php
+
+/** @var \Venice\Product\Block\Brand\BrandFamily $block */
+$collection = $block->getFamily();
+$size = sizeof($collection) % 6;
+$size = $size > 0?($size = 6 - $size):0;
+$brandname = $block->getBrandName();
+$advertisements = $block->getAdvertisements();
+$helper = $this->helper('Venice\Product\Helper\ProductFamilyHelper');
+$_objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$storeManager = $_objectManager->get('Magento\Store\Model\StoreManagerInterface');
+$store = $storeManager->getStore();
+?>
+
+<?php if(count($collection)>0) :?>
+<h3 class="page-title"><strong><?php echo $brandname ?> <?php echo __('collections') ?></strong></h3>
+
+<ol class="clearfix family-collection">
+    <?php foreach($collection as $family):?>
+        <li class="family">
+            <div class="card">
+		<a href="<?php echo $block->getBaseUrl().$family->getUrlKey()?>">
+                    <img class="family-banner-image" src="<?php echo $helper->resizeImageUrl($family->getLogo(),"family-photo")?>"></img>
+                </a>
+                <span class="brand-name"><?php echo $brandname ?></span>
+                <span class="family-name"><?php echo $family->getName()?></span>
+            </div>
+            </a>
+        </li>
+    <?php endforeach; ?>
+    <?php for($i=0; $i < $size; $i++){?>
+        <li class="advertisement">
+	    <a href="#">
+		<img class="ad-image" src="<?php echo $store->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA)."advertisement/advertisement/collection_promobanner_".$i.".jpg"?>"/>
+            </a>
+        </li>
+    <?php } ?>
+</ol>
+<?php endif;?>

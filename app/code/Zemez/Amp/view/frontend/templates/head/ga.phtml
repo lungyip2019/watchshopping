@@ -1,0 +1,21 @@
+<?php /** @var $block \Magento\GoogleAnalytics\Block\Ga */ ?>
+
+<?php $_helper = $this->helper('Magento\GoogleAnalytics\Helper\Data') ?>
+
+<?php if ($_helper->isGoogleAnalyticsAvailable()) : ?>
+  <amp-analytics type="googleanalytics" id="analytics1">
+    <script type="application/json">
+      {
+        "vars": {
+          "account": "<?php echo $this->helper('Zemez\Amp\Helper\Data')->getGoogleAnalytics() ?>"
+        },
+        "triggers": {
+          "trackPageview": {
+            "on": "visible",
+            "request": "pageview"
+          }
+        }
+      }
+    </script>
+  </amp-analytics>
+<?php endif; ?>

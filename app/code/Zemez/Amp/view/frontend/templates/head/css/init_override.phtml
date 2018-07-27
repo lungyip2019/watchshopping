@@ -1,0 +1,15 @@
+<?php $optionsHelper = $this->helper('TemplateMonster\ThemeOptions\Helper\Data');?>
+.wrapper li .price-box.price-final_price,
+.filter-close-btn span,
+span[data-price-type="finalPrice"] {
+<?php if ($optionsHelper->getPrimaryColor()): ?>
+    color: <?php echo $optionsHelper->getPrimaryColor(); ?>;
+<?php endif; ?>
+}
+
+<?php if ($optionsHelper->getPrimaryColor()): ?>
+input[type="submit"],
+.amp-product-addtocart a {
+    background-color: <?php echo $optionsHelper->getPrimaryColor(); ?>;
+}
+<?php endif; ?>

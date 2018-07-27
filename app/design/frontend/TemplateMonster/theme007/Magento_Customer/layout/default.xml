@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="my-account-link">
+            <arguments>
+                <argument name="label" xsi:type="string" translate="true">My Account</argument>
+                <argument name="class" xsi:type="string">my-account</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceBlock name="register-link">
+            <arguments>
+                <argument name="label" xsi:type="string" translate="true">Create an Account</argument>
+                <argument name="class" xsi:type="string">create-an-account</argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

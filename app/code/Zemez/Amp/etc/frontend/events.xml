@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="layout_load_before">
+        <observer name="tm_amp_layout_load_before" instance="Zemez\Amp\Observer\LayoutLoadBefore"/>
+    </event>
+    <event name="core_layout_render_element">
+        <observer name="tm_amp_core_layout_render_element" instance="Zemez\Amp\Observer\CoreLayoutRenderElement"/>
+    </event>
+</config>

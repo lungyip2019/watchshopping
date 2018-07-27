@@ -1,0 +1,24 @@
+<?php
+$posts = $this->getPosts();
+if($posts->getItems()):
+    $titleLength = 50;
+?>
+<div class="block block-recent-posts">
+    <div class="block-title">
+        <strong><?php echo __('Recent Posts') ?></strong>
+    </div>
+    <div class="block-content">
+        <ul>
+            <?php foreach ($posts as $post):
+                $title = $post->getTitle(); ?>
+                <li>
+                    <a href="<?php echo $this->getPostUrl($post); ?>">
+                        <?php echo mb_substr($title, 0, $titleLength); ?>
+                        <?php echo (mb_strlen($title) > $titleLength) ? '...' : ''; ?>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</div>
+<?php endif; ?>

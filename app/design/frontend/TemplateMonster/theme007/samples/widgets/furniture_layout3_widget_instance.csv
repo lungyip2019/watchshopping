@@ -1,0 +1,4 @@
+instance_id,instance_type,theme_id,title,store_ids,widget_parameters,sort_order
+32,Magento\Cms\Block\Widget\Block,4,block_6_2_layout_2 Furniture lt_2 ,14,"{""block_id"":""25""}",40
+33,Magento\Cms\Block\Widget\Block,4,block_5_2_layout_1 Furniture lt_3 ,6,"{""block_id"":""32""}",1
+34,TemplateMonster\FeaturedProduct\Block\FeaturedProduct\Widget\Product,4,New Products Furnitute lt_3 ,6,"{""product_types"":[""new_product""],""product_ids"":"""",""conditions"":{""1"":{""new_child"":""""}},""css_class"":"""",""cache_lifetime"":""0"",""product_image_width"":""470"",""product_image_height"":""470"",""product_name_length"":""28"",""number_per_view"":""4"",""show_carousel"":""0"",""number_per_row"":""4"",""show_label"":""0"",""is_banner"":""0"",""banner_content"":"""",""hover_type"":""0"",""json_data"":""{'new_product':{'title':'New','label':'New'} }""}",2

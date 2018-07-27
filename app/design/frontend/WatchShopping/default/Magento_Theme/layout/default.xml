@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+  <body>
+    <referenceBlock name="logo">
+      <arguments>
+        <argument name="logo_file" xsi:type="string">images/logo.jpg</argument>
+        <argument name="logo_img_width" xsi:type="number">300</argument>
+        <argument name="logo_img_height" xsi:type="number">300</argument>
+      </arguments>
+    </referenceBlock>
+    
+    <referenceContainer name="header-wrapper.grid-container">
+            <container name="top_message_wrapper" htmlClass="top-message-wrapper" htmlTag="div" before="header.bottom.wrap">
+                <block class="Magento\Cms\Block\Block" name="ws_top_message">
+                    <arguments>
+                      <argument name="block_id" xsi:type="string">ws_top_message</argument>
+                    </arguments>
+                </block>
+            </container>
+
+            <container name="logo_ad_wrapper" htmlClass="container" htmlTag="div" before="top_message_wrapper"> 
+              <container name="ad1.wrapper" htmlClass="ad1-wrapper" htmlTag="div" after="logo.wrapper">
+                <block class="Magento\Cms\Block\Block" name="ws_ad1">
+                <arguments>
+                  <argument name="block_id" xsi:type="string">ws_ad1</argument>
+                </arguments>
+                </block>
+              </container>
+             <container name="ad2.wrapper" htmlClass="ad2-wrapper col-lg-4" htmlTag="div" after="ad1.wrapper">
+                <block class="Magento\Cms\Block\Block" name="ws_ad2">
+                  <arguments>
+                    <argument name="block_id" xsi:type="string">ws_ad2</argument>
+                  </arguments>
+                  </block>
+              </container>
+            </container>
+    </referenceContainer>
+    <move element="logo.wrapper"  destination="logo_ad_wrapper" before="ad1.wrapper"/>
+    <move element="logo_ad_wrapper"  destination="header-wrapper" before="header-wrapper.grid-container"/>
+    <referenceBlock name="report.bugs" remove="true"/>
+    <referenceContainer name="logo.wrapper" htmlClass="logger-wrapper col-lg-4" />
+    <referenceBlock name="ad2.wrapper" remove="true"/>
+	   
+	  <!-- <move element="review-links" destination="form.subscribe" before="-"/>
+	  <move element="review-links" destination="footer.grid-col4"/>-->
+	  
+	  <container name="after_slider_block.wrapper" htmlClass="after_slider_block" htmlTag="div" >
+                <block class="Magento\Cms\Block\Block" name="after_slider_block">
+                  <arguments>
+                    <argument name="block_id" xsi:type="string">after_slider_block</argument>
+                  </arguments>
+                  </block>
+              </container>
+	  <container name="feature_menu.wrapper" htmlClass="feature_menu" htmlTag="div" >
+                <block class="Magento\Cms\Block\Block" name="feature_menu">
+                  <arguments>
+                    <argument name="block_id" xsi:type="string">feature_menu</argument>
+                  </arguments>
+                  </block>
+              </container>
+	  <move element="after_slider_block" destination="content" before="-"/>
+	  <move element="feature_menu" destination="content" before="-"/>
+     <block class="Magento\Cms\Block\Block" name="ws_menu_brands_button">
+                <arguments>
+                  <argument name="block_id" xsi:type="string">ws_menu_brands_button</argument>
+                </arguments>
+     </block>
+     <referenceBlock name="page.preloader" remove="true"/>
+     <move element="ws_menu_brands_button" destination="header.bottom.wrap" after="catalog.topnav"/>
+  </body>
+</page>

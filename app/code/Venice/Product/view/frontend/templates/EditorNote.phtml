@@ -1,0 +1,15 @@
+<?php $_note = $block->getCurrentNote(); ?>
+
+<?php if ($_note->getNoteId() !== null): ?>
+    <div class="block widget block-editor-note">
+        <div class="block-title title">
+            <strong role="heading" aria-level="2"><?php echo __("Editor's Note")?></strong>
+        </div>
+        <div class="block-content">
+            <div class="note-title"><?php echo $_note->getTitle(); ?></div>
+            <div class="note-content"><?php echo $_note->getDescription(); ?></div>
+        </div>
+    </div>
+<?php endif ?>
+
+

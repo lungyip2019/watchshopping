@@ -1,0 +1,150 @@
+block_id,title,identifier,content,creation_time,update_time,is_active
+5,menu_block_1,menu_block_1,"<div class=""menu-block-1"">
+    <a class=""menu-banner"" href=""{{store url=''}}furniture.html"">
+        <img src=""{{view url=''}}/images/media/menu-img-1.jpg""/>
+    </a>
+    <a class=""menu-banner"" href=""{{store url=''}}furniture.html"">
+        <img src=""{{view url=''}}/images/media/menu-img-2.jpg""/>
+    </a>
+</div>",2016-08-22 08:22:39,2016-08-22 12:41:10,1
+8,block_1_layout_1,block_1_layout_1,"<div class=""row border-item"">
+    <div class=""col-sm-7"">
+        <div class=""list-1"">
+            <a class=""custom-item-1"" href=""{{store url=''}}furniture.html"">
+                <img src=""{{view url=''}}/images/media/img_1_layout_1.jpg""/>
+                <div class=""custom-item-content"">
+                    <div class=""title-1"">Big Home Sale!</div>
+                    <div class=""desc-1"">Save up to 35%!</div>
+                </div>
+            </a>
+            <a class=""custom-item-1 extra"" href=""{{store url=''}}bed-bath.html"">
+                <img src=""{{view url=''}}/images/media/img_2_layout_1.jpg""/>
+                <div class=""custom-item-content"">
+                    <div class=""title-1"">Modern Designs</div>
+                    <div class=""desc-1"">New contemporary solutions</div>
+                    <span class=""link-button"">Shop now</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class=""col-sm-5"">
+        <a class=""custom-item-2"" href=""{{store url=''}}furniture.html"">
+            <img src=""{{view url=''}}/images/media/img_3_layout_1.jpg""/>
+            <div class=""custom-item-content"">
+                <div class=""title-1"">Select Styles</div>
+                <div class=""desc-1"">Simple, comfy and elegant</div>
+                <span class=""link-button"">Shop now</span>
+            </div>
+        </a>
+    </div>
+</div>
+",2016-09-12 12:46:32,2016-11-09 22:38:10,1
+9,block_2_layout_1,block_2_layout_1,"<div class=""row border-item"">
+    <div class=""col-sm-6"">
+        <div class=""custom-item-3"">
+            <img src=""{{view url=''}}/images/media/img_4_layout_1.jpg""/>
+            <div class=""custom-item-content"">
+                <div class=""title-1"">Light Colors</div>
+                <div class=""desc-1"">Classic and clean style</div>
+                <a class=""link-custom"" href=""{{store url=''}}furniture.html"">Shop now</a>
+            </div>
+        </div>
+    </div>
+    <div class=""col-sm-6"">
+        <div class=""custom-item-3 extra"">
+            <img src=""{{view url=''}}/images/media/img_5_layout_1.jpg""/>
+            <div class=""custom-item-content"">
+                <div class=""title-1"">Nonstandard Ideas</div>
+                <div class=""desc-1"">Use your creative fantasy</div>
+                <a class=""link-custom"" href=""{{store url=''}}bed-bath.html"">Shop now</a>
+            </div>
+        </div>
+    </div>
+</div>
+",2016-09-12 12:47:23,2016-11-07 00:34:27,1
+25,block_6_2_layout_2,block_6_2_layout_2,"<ul class=""custom-item-13 row"">
+    <li class=""col-sm-4"">
+        <div class=""custom-content"">
+            <span class=""icon-telephone""></span>
+            <div class=""title"">+3(800) 2345-6789</div>
+            <div class=""desc-content"">Round-the-clock free hotline (24/7)</div>
+        </div>
+    </li>
+    <li class=""col-sm-4"">
+        <div class=""custom-content"">
+            <span class=""icon-truck""></span>
+            <div class=""title"">Free Shipping</div>
+            <div class=""desc-content"">Shipping cost for any delivery method and order cost <br /> is $49. Free delivery on orders of $99.</div>
+        </div>
+    </li>
+    <li class=""col-sm-4"">
+        <div class=""custom-content"">
+            <span class=""icon-sync""></span>
+            <div class=""title"">Return & Exchange</div>
+            <div class=""desc-content"">You can return or exchange the item <br />within 30 days.</div>
+        </div>
+    </li>
+</ul>",2016-12-19 09:42:47,2016-12-19 10:10:09,1
+26,block_4_2_layout_1,block_4_2_layout_1,"<div class=""row"">
+    <div class=""col-sm-4"">
+        <div class=""custom-item-19"">
+            <img src=""{{view url=''}}/images/media/img_33_furniture.jpg""/>
+            <div class=""custom-item-content"">
+                <div class=""desc-1"">New Contemporary Solutions</div>
+                <div class=""title-1"">Modern Designs</div>
+            </div>
+            <a class=""link-custom"" href=""{{store url=''}}furniture.html"">Shop now</a>
+        </div>
+    </div>
+    <div class=""col-sm-8"">
+        <div class=""custom-item-20"">
+            <img src=""{{view url=''}}/images/media/img_34_furniture.jpg""/>
+            <div class=""custom-item-content"">
+                <div class=""desc-1"">Big Home Sale!</div>
+                <div class=""title-1"">Save <div>35%<span>off</span></div></div>
+                <a class=""link-custom"" href=""{{store url=''}}bed-bath.html"">Shop now</a>
+            </div>
+        </div>
+        <div class=""row"">
+            <div class=""col-sm-6"">
+                <div class=""custom-item-21"">
+                    <img src=""{{view url=''}}/images/media/img_35_furniture.jpg""/>
+                    <div class=""custom-item-content"">
+                        <div class=""desc-1"">new arrival</div>
+                        <div class=""title-1"">Quality Furniture</div>
+                        <a class=""link-custom"" href=""{{store url=''}}bed-bath.html"">Shop now</a>
+                    </div>
+                </div>
+            </div>
+            <div class=""col-sm-6"">
+                <div class=""custom-item-22"">
+                    <img src=""{{view url=''}}/images/media/img_36_furniture.png""/>
+                    <div class=""custom-item-content"">
+                        <div class=""desc-1"">Add a sense of cosiness to your living space!</div>
+                        <div class=""title-1"">Style and Comfort</div>
+                        <a class=""link-custom"" href=""{{store url=''}}furniture.html"">Shop now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+",2016-12-21 02:49:11,2016-12-23 08:35:17,1
+32,block_5_2_layout_1,block_5_2_layout_1,"<div class=""custom-item-23"">
+    <div class=""title-static-block"">Welcome to MAGETIQUE, timeless modern furniture and decor.</div>
+    <ul class=""row"">
+        <li class=""col-sm-6"">
+            <div class=""custom-content"">
+                <p>
+                    Magetique embraces all of our design and technical knowledge, which translates into the most advanced Magento 2 experience. It includes a myriad of marketing, design and administration tools. No other theme on the market offers this much functionality right off the bat - you're getting over 20 extensions that facilitate your business needs. From simple upsell modules, like Smart Product Labels and Featured Products, to advanced design functions, like Parallax & Background Video.
+                </p>
+                Sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </div>
+        </li>
+        <li class=""col-sm-6"">
+            <div class=""custom-content"">
+                Easily edit pages, page blocks and various on-screen elements to provide a tailored shopping experience for your clients. You don't need any CSS knowledge or programming skills to do that. You get all of this eCommerce goodness for free. The package includes 5 layouts that were carefully crafted to fit a variety of niches. They are easily installed and managed with an intuitive interface and detailed documentation.
+            </div>
+        </li>
+    </ul>
+</div>",2017-01-13 09:38:53,2017-03-03 13:00:17,1

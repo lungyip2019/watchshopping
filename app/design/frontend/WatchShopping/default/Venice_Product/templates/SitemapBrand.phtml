@@ -1,0 +1,38 @@
+<?php $items = $block->getBrands(); ?>
+<?php if (!empty($items)): ?>
+
+
+
+<div class="xsitemap">
+	<div class="xsitemap-categories">
+    <div class="sitemap-brands">
+        <h3 class="page-title"><strong><?php echo __('BRANDS') ?></strong></h3>
+		<ul>
+			<li class="level-0">
+				<!--<a href="<?php # echo $block->getStoreUrl().'brand'; ?>" class="subtitle"><?php # echo __('BRANDS') ?></a>-->
+				<ul>
+					<li class="level-1">	
+        <?php foreach ($items as $item): ?>
+            <?php if ($item && $item->getName() !== null):?>
+					
+            <a href="<?php echo $block->getStoreUrl().$item->getUrl(); ?>"><i class="fa fa-angle-right" aria-hidden="true"></i> <?php echo $item->getName(); ?></a>
+            <ul class="product-family">
+                 <?php foreach ($items as $product_family): ?>
+					<?php if (($product_family->getId()) === $item->getId()):?>
+					<li class="level-2">
+						<a href="<?php echo $block->getStoreUrl().$product_family->getFamilyUrl(); ?>"><?php echo $product_family->getFamilyName(); ?></a>
+					</li>
+					<?php endif;?>
+				<?php endforeach; ?>
+            </ul>
+				
+            <?php endif;?>
+        <?php endforeach; ?>
+					</li>	
+				</ul>
+    </div>
+		</li>
+		</ul>
+<?php endif;?>
+</div>
+</div>

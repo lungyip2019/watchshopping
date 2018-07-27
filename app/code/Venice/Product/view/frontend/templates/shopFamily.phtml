@@ -1,0 +1,28 @@
+<?php
+/* @var $block \Venice\Product\Block\FamilyRelated */
+?>
+
+
+<?php if($block->getItemCount()>0) :?>
+<div data-bind="scope: 'productsFamily'">
+<!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<script type="text/x-magento-init">
+        {
+            "*": {
+                "Magento_Ui/js/core/app": {
+                    "components": {
+                        "productsFamily": {
+                            "component": "Venice_Product/js/productsFamily",
+                            "template" : "Venice_Product/shopFamily",
+                            "productList": <?php echo $block->getItemsJson()?>,
+                            "lastpage": <?php echo $block->getLastPage()?>,
+                            "productId":<?php echo $block->getCurrentProductId()?>
+                        }
+                    }
+                }
+            }
+        }
+</script>
+<?php endif;?>

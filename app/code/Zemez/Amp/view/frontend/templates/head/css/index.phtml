@@ -1,0 +1,78 @@
+.amp-cat{text-align:center;font-size:0;margin-left:-1.5%;margin-right:-1.5%}
+.amp-cat a{margin:1%;width:31%;letter-spacing:0;display:inline-block;color:#636363;box-sizing:border-box;text-transform:uppercase;font-size:20px;position:relative}
+.amp-cat a:hover{opacity:0.6;text-decoration:none}
+.amp-cat a > span{display:block;background-color:#f4f4f4;background-size:cover;background-position:center}
+.amp-cat a span span{display:inline-block;line-height:normal;background:#fff;padding:3px 10px;min-width:80px;position:absolute;top:50%;transform:translate(-50%,-50%);left:50%}
+
+@media (max-width:760px){
+.amp-cat{margin-left:0;margin-right:0}
+.amp-cat a > span{line-height:100px}
+.amp-cat a{width:48%;font-size: 15px;}
+.amp-cat a.sale,.amp-cat a.vip{width:auto;display:block;margin-bottom:2%}
+}
+@media (max-width:550px){
+.amp-cat a{width:auto;display:block;margin-bottom:2%}
+.amp-cat a.sale,.amp-cat a.vip{width:48%;display:inline-block;margin-bottom:2%;margin-top: 0}
+}
+
+.rating-summary .rating-result__text { display:none }
+.rating-summary .rating-result__stars span[class^="rating-star__"] { color: #ffa800; display: inline-block; font-size: 14px; line-height: 1; padding: 0 2px; position: relative; vertical-align: middle; }
+.rating-summary .rating-result__stars span[class^="rating-star__"]:before, .rating-summary .rating-result__stars span[class^="rating-star__"]:after {font-family: "Material Icons";font-size:14px;line-height: 1;}
+.rating-summary .rating-result__stars span[class^="rating-star__"]:before {content: '\e83a';font-family: "Material Icons";color: #b6c5d7; }
+.rating-summary .rating-result__stars span[class^="rating-star__"]:after {color: #ffa800;position: absolute;top: 0;left: 2px; }
+.rating-summary .rating-result__stars span[class^="rating-star__"].rating-star__full:after {content: '\e838'; }
+.rating-summary .rating-result__stars span[class^="rating-star__"].rating-star__half:after {content: '\e839'; }
+
+.brandlist {display: -webkit-flex;display: -moz-flex;display: -ms-flex;display: -o-flex;display: flex;flex-wrap: wrap;margin: 0 -8px;justify-content: space-around}
+.brandlist {padding-top: 40px;margin-top: -47px;}
+.product-items > .product-item,
+.brandlist > li {padding: 0 8px;}
+.category-grid .subcategory-grid { text-align: center; font-size: 70%; }
+#brand-carousel .inner {margin: 0; padding: 0 15px; text-align: center;}
+.brandlist .amp-carousel-button {top: 0;transform: translateY(0);}
+.brandlist .amp-carousel-button.amp-carousel-button-prev,
+.brandlist .amp-carousel-button.amp-carousel-button-next {background: none;color: #333;font-size: 20px;text-align: center;line-height: 34px;}
+.brandlist .amp-carousel-button.amp-carousel-button-prev:before,
+.brandlist .amp-carousel-button.amp-carousel-button-next:before{font-family:"Material Icons"; font-style: normal;}
+.brandlist .amp-carousel-button.amp-carousel-button-prev:before {content: "\e5c4";}
+.brandlist .amp-carousel-button.amp-carousel-button-next:before {content: "\e5c8";}
+.brandlist .amp-carousel-button.amp-carousel-button-prev {right: 60px;left: auto;}
+.block-products-list .pages-items {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center
+}
+.block.widget {
+	overflow: hidden;
+}
+.block-products-list .pager .toolbar-amount { text-align: center;} 
+.block-products-list .pages-items li {
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	background: #333;
+	color: #fff;
+	border: 1px solid #333;
+	border-radius: 2px;
+	margin: 2px;
+}
+.block-products-list .pages-items li a { color: #fff; }
+.block-products-list .pages-items li.current {
+	background: #fff;
+	color: #333;
+	border: 1px solid #333;
+}
+.block-products-list .pages-items li.current a {color:#333;}
+.block-products-list .pages-items li.pages-item-next,
+.block-products-list .pages-items li.pages-item-previous {
+	width: auto;
+}
+.block-products-list .pages-items li.pages-item-next span:not(.label),
+.block-products-list .pages-items li.pages-item-previous span:not(.label) {
+	display: block;
+	margin: 0 2px;
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <update id="TemplateMonster_Base::modules" title="Template Monster" module="TemplateMonster_Blog" sortOrder="30" resource="TemplateMonster_Base::modules" />
+        <add id="TemplateMonster_Blog::blog_elements" title="Blog" module="TemplateMonster_Blog" parent="TemplateMonster_Base::modules" sortOrder="10"  resource="TemplateMonster_Blog::blog_elements"/>
+        <add id="TemplateMonster_Blog::category" title="Categories" module="TemplateMonster_Blog" sortOrder="0" parent="TemplateMonster_Blog::blog_elements" action="tm_blog/category/" resource="TemplateMonster_Blog::category"/>
+        <add id="TemplateMonster_Blog::post" title="Posts" module="TemplateMonster_Blog" sortOrder="0" parent="TemplateMonster_Blog::blog_elements" action="tm_blog/post/" resource="TemplateMonster_Blog::post"/>
+        <add id="TemplateMonster_Blog::comment" title="Comments" module="TemplateMonster_Blog" sortOrder="0" parent="TemplateMonster_Blog::blog_elements" action="tm_blog/comment/" resource="TemplateMonster_Blog::comment"/>
+    </menu>
+</config>

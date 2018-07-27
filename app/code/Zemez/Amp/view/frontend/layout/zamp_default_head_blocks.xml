@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+  <head>
+    <remove src="mage/calendar.css"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <attribute name="prefix" value="" />
+  </head>
+  <body>
+    <referenceBlock name="require.js" remove="true"/>
+    <block class="Magento\Framework\View\Element\Template" name="head.additional" as="head.additional" template="Magento_Theme::html/container.phtml">
+      <block class="Magento\Framework\View\Element\Template" name="ampcss" as="ampcss" template="Zemez_Amp::head/css.phtml">
+        <block class="Zemez\Amp\Block\Page\Head\Style" name="ampcss.style" as="ampcss.style" template="Zemez_Amp::head/css/style.phtml" before="-"/>
+      </block>
+      <block class="Zemez\Amp\Block\Page\Head\Js" name="ampjs" as="ampjs">
+        <action method="addJs">
+          <argument name="src" xsi:type="string">https://cdn.ampproject.org/v0/amp-lightbox-0.1.js</argument>
+          <argument name="type" xsi:type="string">amp-lightbox</argument>
+        </action>
+        <action method="addJs">
+          <argument name="src" xsi:type="string">https://cdn.ampproject.org/v0/amp-analytics-0.1.js</argument>
+          <argument name="type" xsi:type="string">amp-analytics</argument>
+        </action>
+        <action method="addJs">
+          <argument name="src" xsi:type="string">https://cdn.ampproject.org/v0/amp-carousel-0.1.js</argument>
+          <argument name="type" xsi:type="string">amp-carousel</argument>
+        </action>
+        <action method="addJs">
+          <argument name="src" xsi:type="string">https://cdn.ampproject.org/v0/amp-youtube-0.1.js</argument>
+          <argument name="type" xsi:type="string">amp-youtube</argument>
+        </action>
+      </block>
+    </block>
+  </body>
+</page>

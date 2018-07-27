@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!-- add showing the specification -->
+        <referenceBlock name="product.info.details">
+            <block class="Venice\Product\Block\WatchSpecSheet" name="watchspecsheet"  template="Venice_Product::SpecSheet.phtml"  as="Details" group="detailed_info">
+                <arguments>
+                    <argument name="title" translate="true" xsi:type="string">Detail</argument>
+                    <argument name="priority" xsi:type="string">1</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+        <!-- add showing crosssell -->
+        <referenceContainer name="product.info.sub.others">
+            <block class="Venice\Product\Block\Crosssell" name="crosssell" template="Venice_Product::items.phtml" after="-">
+                <arguments>
+                    <argument name="type" xsi:type="string">crosssell</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <!-- add showing shop the collection -->
+        <referenceContainer name="product.info.details.container">
+            <block class="Venice\Product\Block\FamilyRelated" name="family" template="Venice_Product::shopFamily.phtml" after="-">
+            </block>
+        </referenceContainer>
+        <!-- add showing editor's note -->
+        <referenceContainer name="product.info.details.container">
+            <block class="Venice\Product\Block\EditorNote" name="editornote" template="Venice_Product::EditorNote.phtml" after="-">
+            </block>
+        </referenceContainer>
+        <!-- add showing shop the collection -->
+        <referenceContainer name="product.info.details.container">
+            <block class="Venice\Product\Block\VideoGallery" name="videogallery" template="Venice_Product::VideoGallery.phtml" />
+        </referenceContainer>
+        <!-- add showing product categories -->
+        <referenceContainer name="product.info.sub.others">
+            <block class="Venice\Product\Block\FindMore" name="product_findmore" template="Venice_Product::FindMore.phtml" >
+            </block>
+        </referenceContainer>
+    </body>
+</page>

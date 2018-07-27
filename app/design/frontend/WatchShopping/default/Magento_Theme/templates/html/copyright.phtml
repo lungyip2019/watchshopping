@@ -1,0 +1,10 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<small class="copyright">
+    <span><?= /* @escapeNotVerified */ $block->getCopyright() ?></span>
+	<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_copyright_menu')->toHtml();?>
+</small>

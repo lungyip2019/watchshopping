@@ -1,0 +1,212 @@
+block_id,title,identifier,content,creation_time,update_time,is_active
+20,left_custom_block,left_custom_block,"<div class=""left-custom block"">
+    <div class=""block-title left-custom-title"">
+        <span class=""icon-plane""></span>
+        <strong>
+            Shipping and Delivery
+        </strong>
+    </div>
+    <div class=""block-content"">
+        Here you can read some details about a nifty little lifecycle of your order's journey from the time you place your order to your new treasures arriving at your doorstep.
+    </div>
+</div>
+
+<div class=""left-custom block"">
+    <div class=""block-title left-custom-title"">
+        <span class=""icon-wallet""></span>
+        <strong>
+            Payment Methods
+        </strong>
+    </div>
+    <div class=""block-content"">
+        It is equally important to choose the solution which offers a specific selection of credit cards that are most popular in the merchants target markets. We take Visa & MasterCard as they are widely used by cyber customers.
+    </div>
+</div>
+
+<div class=""left-custom block"">
+    <div class=""block-title left-custom-title"">
+        <span class=""icon-telephone2""></span>
+        <strong>
+            Contact us
+        </strong>
+    </div>
+    <div class=""block-content"">
+        You can contact us any way that is convenient for you. We are available 24/7 via fax, email or telephone. You can also use a quick contact form or visit our office personally.
+    </div>
+</div>",2016-12-09 03:26:25,2016-12-09 03:51:29,1
+21,block_1_layout_4,block_1_layout_4,"<div class=""custom-item-9"">
+    <div class=""item"">
+        <div class=""position-relative"">
+            <img src=""{{view url=''}}/images/media/img_19_layout_4.jpg""/>
+
+            <div class=""custom-item-content"">
+                <div class=""title-1"">Dental</div>
+                <div class=""desc-1"">Suppliesnew</div>
+                <a class=""link-custom"" href=""{{store url=''}}dental-supplies-new.html"">Shop now</a>
+            </div>
+        </div>
+    </div>
+    <div class=""item"">
+        <div class=""position-relative"">
+            <img src=""{{view url=''}}/images/media/img_20_layout_4.jpg""/>
+
+            <div class=""custom-item-content"">
+                <div class=""title-1"">MRI</div>
+                <div class=""desc-1"">Machine</div>
+                <a class=""link-custom"" href=""{{store url=''}}combination-deals.html"">Shop now</a>
+            </div>
+        </div>
+    </div>
+</div>
+",2016-12-09 05:34:07,2016-12-09 08:20:18,1
+22,block_2_layout_4,block_2_layout_4,"<div class=""custom-item-10"">
+    <img src=""{{view url=''}}/images/media/img_21_layout_4.jpg""/>
+    <div class=""custom-item-content"">
+        <div class=""title-1"">New Technologies</div>
+        <div class=""desc-1"">Enhancing the healing process</div>
+        <a class=""link-custom"" href=""{{store url=''}}rehab-supplies.html"">Shop now!</a>
+    </div>
+</div>",2016-12-12 08:24:31,2016-12-12 08:24:31,1
+29,block_3_2_layout_4,block_3_2_layout_4,"<div class=""row-main-custom"">
+    <div class=""col-main-custom col-m-1 custom-item-16"">
+        <div class=""item"">
+            <div class=""position-relative"">
+                <img src=""{{view url=''}}/images/media/img_29_medical.jpg""/>
+
+                <div class=""custom-item-content"">
+                    <div class=""title-1"">MRI</div>
+                    <div class=""desc-1"">Machine</div>
+                    <a class=""link-custom"" href=""{{store url=''}}combination-deals.html"">Shop now</a>
+                </div>
+            </div>
+        </div>
+        <div class=""item"">
+            <div class=""position-relative"">
+                <img src=""{{view url=''}}/images/media/img_30_medical.jpg""/>
+                <div class=""custom-item-content"">
+                    <div class=""title-1"">Dental</div>
+                    <div class=""desc-1"">Suppliesnew</div>
+                    <a class=""link-custom"" href=""{{store url=''}}dental-supplies-new.html"">Shop now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=""col-main-custom col-m-2"">
+        <div class=""custom-item-17"">
+            <img src=""{{view url=''}}/images/media/img_31_medical.jpg""/>
+            <div class=""custom-item-content"">
+                <div class=""title-1"">ultrasound</div>
+                <div class=""desc-1"">Machine</div>
+                <a class=""link-custom"" href=""{{store url=''}}rehab-supplies.html"">Shop now!</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class=""custom-item-18"">
+    <img src=""{{view url=''}}/images/media/img_32_medical.jpg""/>
+    <div class=""custom-item-content"">
+        <div class=""title-1"">New Technologies</div>
+        <div class=""desc-1"">Enhancing the healing process</div>
+        <a class=""link-custom"" href=""{{store url=''}}dental-supplies-new.html"">Shop now!</a>
+    </div>
+</div>",2016-12-22 09:51:30,2016-12-23 03:26:43,1
+30,left_custom_block_lt2,left_custom_block_lt2,"<div class=""left-custom block block-bg-custom"">
+    <div class=""block-title left-custom-title"">
+        <span class=""icon-plane""></span>
+        <strong>
+            Shipping and Delivery
+        </strong>
+    </div>
+    <div class=""block-content"">
+        Here you can read some details about a nifty little lifecycle of your order's journey from the time you place your order to your new treasures arriving at your doorstep.
+    </div>
+</div>
+
+<div class=""left-custom block block-border-custom"">
+    <div class=""block-title left-custom-title"">
+        <span class=""icon-wallet""></span>
+        <strong>
+            Payment Methods
+        </strong>
+    </div>
+    <div class=""block-content"">
+        It is equally important to choose the solution which offers a specific selection of credit cards that are most popular in the merchants target markets. We take Visa & MasterCard as they are widely used by cyber customers.
+    </div>
+</div>
+
+<div class=""left-custom block block-bg_2-custom"">
+    <div class=""block-title left-custom-title"">
+        <span class=""icon-telephone2""></span>
+        <strong>
+            Contact us
+        </strong>
+    </div>
+    <div class=""block-content"">
+        You can contact us any way that is convenient for you. We are available 24/7 via fax, email or telephone. You can also use a quick contact form or visit our office personally.
+    </div>
+</div>",2016-12-22 11:14:13,2016-12-22 11:14:13,1
+35,block_4_3_layout_4,block_4_3_layout_4,"<div class=""custom-item-25"">
+    <div class=""item"">
+        <a class=""position-relative"" href=""{{store url=''}}dental-supplies-new.html"">
+            <img src=""{{view url=''}}/images/media/img_37_medical.jpg""/>
+
+            <div class=""custom-item-content"">
+                <div class=""title-1"">Dental</div>
+                <div class=""desc-1"">Supplies New</div>
+            </div>
+        </a>
+    </div>
+    <div class=""item"">
+        <a class=""position-relative"" href=""{{store url=''}}combination-deals.html"">
+            <img src=""{{view url=''}}/images/media/img_38_medical.jpg""/>
+            <div class=""custom-item-content"">
+                <div class=""title-1"">MRI</div>
+                <div class=""desc-1"">Machine</div>
+            </div>
+        </a>
+    </div>
+</div>
+",2017-01-13 14:10:27,2017-01-13 14:10:27,1
+36,block_5_3_layout_4,block_5_3_layout_4,"<div class=""row custom-item-26"">
+    <div class=""col-sm-4"">
+        <div class=""block-bg-custom"">
+            <div class=""block-title left-custom-title"">
+                <span class=""icon-plane""></span>
+                <strong>
+                    Shipping and Delivery
+                </strong>
+            </div>
+            <div class=""block-content"">
+                Here you can read some details about a nifty little lifecycle of your order's journey from the time you place your order to your new treasures arriving at your doorstep.
+            </div>
+        </div>
+    </div>
+
+    <div class=""col-sm-4"">
+        <div class=""block-border-custom"">
+            <div class=""block-title left-custom-title"">
+                <span class=""icon-wallet""></span>
+                <strong>
+                    Payment Methods
+                </strong>
+            </div>
+            <div class=""block-content"">
+                It is equally important to choose the solution which offers a specific selection of credit cards that are most popular in the merchants target markets. We take Visa & MasterCard as they are widely used by cyber customers.
+            </div>
+        </div>
+    </div>
+
+    <div class=""col-sm-4"">
+        <div class=""block-bg_2-custom"">
+            <div class=""block-title left-custom-title"">
+                <span class=""icon-telephone2""></span>
+                <strong>
+                    +1(234) 567-8901
+                </strong>
+            </div>
+            <div class=""block-content"">
+                You can contact us any way that is convenient for you. We are available 24/7 via fax, email or telephone. You can also use a quick contact form or visit our office personally.
+            </div>
+        </div>
+    </div>
+</div>",2017-01-13 14:10:56,2017-01-13 14:10:56,1

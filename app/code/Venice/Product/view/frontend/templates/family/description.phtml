@@ -1,0 +1,10 @@
+<?php
+/** @var \Venice\Product\Block\Family\View $block */
+$family=$block->getFamily();
+?>
+<h2 class="banner-title"><?php echo $family->getName()?></h2>
+<p class="banner-content">
+    <?php if($family->getMainDescription()): ?>
+       <?php echo $family->getMainDescription() ?>
+    <?php endif;?>
+</p>

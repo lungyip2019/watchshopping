@@ -1,0 +1,48 @@
+<?php
+$posts = $this->getItems();
+$titleLength = 35;
+?>
+
+<?php if ($posts->count()) : ?>
+    <div class="block related-posts">
+        <div class="block-title title">
+            <strong><?php echo __('Related Posts') ?></strong>
+        </div>
+        <div class="block-content content">
+            <?php if ($this->getRelatedPostsLayoutView() == 'list'): ?>
+                <ul class="related-post-list">
+                    <?php foreach ($posts as $post): ?>
+                        <li>
+                            <h5 class="post-title">
+                                <a href="<?php echo $this->getPostUrl($post); ?>">
+                                    <?php echo mb_substr($post->getTitle(), 0, $titleLength); ?>
+                                    <?php echo (mb_strlen($post->getTitle()) > $titleLength) ? '...' : '' ?>
+                                </a>
+                            </h5>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php endif; ?>
+            <?php if ($this->getRelatedPostsLayoutView() == 'grid'): ?>
+                <?php $visibleCarousel = $this->getRelatedPostsNumberPerView(); ?>
+                <ul class="related-post-grid" data-mage-init='{"blogCarousel": {"items": "<?php /* @escapeNotVerified */ echo $visibleCarousel; ?>"}}'>
+                    <?php foreach ($posts as $post): ?>
+                        <div class="inner">
+                            <?php if ($imageUrl = $post->getImage()): ?>
+                                <a href="<?php echo $this->getPostUrl($post); ?>" class="post-image">
+                                    <img src="<?php echo $imageUrl; ?>" alt="" />
+                                </a>
+                            <?php endif; ?>
+                            <h5 class="post-title">
+                                <a href="<?php echo $this->getPostUrl($post); ?>">
+                                    <?php echo mb_substr($post->getTitle(), 0, $titleLength); ?>
+                                    <?php echo (mb_strlen($post->getTitle()) > $titleLength) ? '...' : '' ?>
+                                </a>
+                            </h5>
+                        </div>
+                    <?php endforeach; ?>
+                </ul>
+            <?php endif; ?>
+        </div>
+    </div>
+<?php endif; ?>

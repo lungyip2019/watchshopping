@@ -1,0 +1,117 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin fn-ul(){
+	font-size:0;letter-spacing: 0;
+	>li,>div{
+		font-size:$h14;
+		display:inline-block; 
+	}
+}
+
+@mixin fontSize($size){
+	font-size:$size;
+	font-family: 'Source Sans Pro', sans-serif;
+	line-height: $size+0.2;
+}
+@mixin displayInLineBlock($pos){
+	display:inline-block;
+	vertical-align: $pos;
+}
+
+@mixin displayIcon($width,$height,$img){
+	position:relative;
+	&:before{
+		content: "";
+		background:url(#{$icon_url}#{$img}) no-repeat left top /100% auto;
+		position:absolute;
+		display:block;
+		width:$width;
+		height:$height;
+		top:50%;
+		left:0;
+		margin-top:-$height/2;
+	}
+}
+
+@mixin boxShadow($type){
+	box-shadow: $type;
+	-moz-box-shadow:$type;
+	-webkit-box-shadow:$type;
+}
+
+@mixin flexBasis($size){
+	flex-basis: $size;
+	-moz-flex-basis: $size;
+	-webkit-flex-basis: $size;
+}
+
+@mixin wsCol($colNum){
+	
+	width:100%/$colNum;
+}
+
+@mixin mediaWidth($type){
+	@media (max-width:$type){
+		@content;
+	}
+}
+
+@mixin displayNone(){
+	display:none;
+	visibility: hidden;
+}
+
+@mixin setNormalbtn(){
+	background-color:$white!important;
+	color:$price-color!important;
+	border:1px solid $normal-btn-line!important;
+	&:hover{
+		background-color:$price-color!important;
+		color:$white!important;
+	}
+}
+@mixin setbluebtn(){
+	background-color:$price-color!important;
+	color:$white!important;
+	&:hover{
+		background-color:$blue!important;
+		color:$white!important;
+	}
+}
+
+@mixin setbuybtn(){
+	background-color:$btn-buy-color!important;
+	color:$white!important;
+	width:100%;
+	display: flex;
+	align-items: center;
+	justify-content:  center;
+	&:hover{
+		background-color:$banner-word!important;
+		color:$white!important;
+	}
+}
+
+
+
+@mixin seticonfont($icon,$ifont:$fa-family,$front:'before'){
+	@if $front=='before'{
+		&:before{
+			content:$icon;
+			font-family: $ifont;
+			text-indent: 1px;
+		}
+	}@else{
+		&:after{
+			content:$icon;
+			font-family: $ifont;
+			text-indent: 1px;
+		}
+	}
+	
+}

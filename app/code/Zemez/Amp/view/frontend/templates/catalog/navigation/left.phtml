@@ -1,0 +1,45 @@
+<?php
+/**
+ * Category left navigation
+ *
+ * @var $block \Magento\Catalog\Block\Navigation
+ */
+?>
+<?php if (!$block->getCategory()) {
+    return;
+} ?>
+<?php $_categories = $block->getCurrentChildCategories() ?>
+<?php $_count = is_array($_categories) ? count($_categories) : $_categories->count() ?>
+<?php if ($_count) : ?>
+    <div class="block filter">
+        <div class="block-title filter-title">
+            <strong><?php echo __('Shopping Options') ?></strong>
+        </div>
+        <div class="block-content filter-content">
+            <!-- <input type="checkbox" id="filter-items"/> -->
+            <!-- <label for="filter-items" class="block-subtitle filter-subtitle"><?php echo __('Shop By') ?></label> -->
+            <button class="block-subtitle filter-subtitle" on="tap:narrow-by-list">Filter</button>
+            <amp-lightbox id="narrow-by-list" layout="nodisplay">
+                <ul class="filter-options">
+                    <li>
+                        <input type="checkbox" id="filter-item-category"/>
+                        <label for="filter-item-category" class="filter-options-title"><?php echo __('Category') ?></label>
+                        <ul class="items">
+                            <?php foreach ($_categories as $_category) : ?>
+                                <?php if ($_category->getIsActive()) : ?>
+                                    <li class="item">
+                                        <a href="<?php echo $block->getCategoryUrl($_category) ?>"<?php if ($block->isCategoryActive($_category)): ?> class="current"<?php endif; ?>><?php echo $block->escapeHtml($_category->getName()) ?></a>
+                                        <?php if ($_category->getProductCount()) : ?>
+                                            <span class="count"><?php echo $_category->getProductCount() ?></span>
+                                        <?php endif ?>
+                                    </li>
+                                <?php endif ?>
+                            <?php endforeach ?>
+                        </ul>
+                    </li>
+                </ul>
+                <a on="tap:narrow-by-list.close" role="button" tabindex="0" class="filter-close-btn">Close</a>
+            </amp-lightbox>
+        </div>
+    </div>
+<?php endif ?>

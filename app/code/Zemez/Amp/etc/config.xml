@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <tm_amp>
+            <general>
+                <pages>catalog_category_view,catalog_product_view</pages>
+                <amp_option_iframe>1</amp_option_iframe>
+                <ignore_page_amp_cdn>/customer/
+/checkout/</ignore_page_amp_cdn>
+            </general>
+            <logo>
+            	<logo_image_height>50</logo_image_height>
+            </logo>
+        </tm_amp>
+    </default>
+</config>

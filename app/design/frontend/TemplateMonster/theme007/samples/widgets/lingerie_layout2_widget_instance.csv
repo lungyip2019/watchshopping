@@ -1,0 +1,7 @@
+instance_id,instance_type,theme_id,title,store_ids,widget_parameters,sort_order
+1,TemplateMonster\FilmSlider\Block\Widget\FilmSlider,4,Slider_layout_2 Lingerie ,"1,3","{""title"":"""",""slider_id"":""2""}",1
+13,Magento\Cms\Block\Widget\Block,4,Lingerie block_4_2_layout_2 lt2 ,3,"{""block_id"":""23""}",10
+14,TemplateMonster\FeaturedProduct\Block\FeaturedProduct\Widget\Product,4,New Product Lingerie lt2 ,3,"{""product_types"":[""new_product""],""product_ids"":"""",""conditions"":{""1"":{""new_child"":""""}},""css_class"":""products-center"",""cache_lifetime"":""0"",""product_image_width"":""477"",""product_image_height"":""609"",""product_name_length"":""20"",""number_per_view"":""8"",""show_carousel"":""0"",""number_per_row"":""4"",""show_label"":""0"",""is_banner"":""0"",""banner_content"":"""",""hover_type"":""switcher"",""json_data"":""{'new_product':{'title':'New Products','label':'New'} }""}",20
+15,Magento\Cms\Block\Widget\Block,4,block_5_2_layout_2 Lingerie lt_2 ,3,"{""block_id"":""24""}",30
+16,TemplateMonster\Blog\Block\Widget\PostList,4,Blog Lingerie lt_2,3,"{""widget_status"":""1"",""title"":""From the Blog"",""post_title_length"":""30"",""post_desc_length"":""200"",""post_amount"":""10"",""post_amount_per_row"":"""",""is_enable_carousel"":""1"",""post_amount_per_view"":""3""}",40
+17,Magento\Cms\Block\Widget\Block,4,block_6_2_layout_2 Lingerie lt_2 ,3,"{""block_id"":""25""}",50

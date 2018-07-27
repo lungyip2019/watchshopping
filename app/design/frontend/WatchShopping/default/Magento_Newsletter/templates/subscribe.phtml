@@ -1,0 +1,62 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$request = $objectManager->get('Magento\Framework\App\Action\Context')->getRequest();
+?>
+<div class="block-newsletter">
+    <div class="container">
+        <div class="row">
+            <div class="title">
+                <strong><?php /* @escapeNotVerified */echo __('New to Watchshopping?') ?></strong>
+                <span class="slog-newsletter"><?php /* @escapeNotVerified */echo __('Sign up to receive special offers & the latest style news.') ?></span>
+            </div>
+            <div class="content">
+                <form class="form subscribe"
+                      novalidate
+                      action="<?php /* @escapeNotVerified */
+                      echo $block->getFormActionUrl() ?>"
+                      method="post"
+                      data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+                      id="newsletter-validate-detail">
+                    <div class="field newsletter">
+                        <div class="control">
+                            <input
+                                name="email"
+                                type="email"
+                                id="newsletter"
+                                placeholder="<?php /* @escapeNotVerified */
+                                echo __('Enter your email address') ?>"
+                                data-validate="{required:true, 'validate-email':true}"/>
+                        </div>
+                        <button class="action subscribe primary" title="<?php /* @escapeNotVerified */echo __('SIGN UP') ?>" type="submit">
+                            <span><?php /* @escapeNotVerified */echo __('SIGN UP') ?></span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+			<div class="btn-lists">
+				<?php echo $this->getLayout()
+          ->createBlock('Magento\Cms\Block\Block')
+          ->setBlockId('footer-review-links')
+          ->toHtml(); ?>
+			</div>
+        </div>
+    </div>
+</div>
+
+<div class="footer-contact-bar">
+	
+		<?php echo $this->getLayout()
+          ->createBlock('Magento\Cms\Block\Block')
+          ->setBlockId('footer_contact')
+          ->toHtml(); ?>
+	
+	
+</div>
+
+

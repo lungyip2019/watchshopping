@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+
+<page layout="tm_amp" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+    	<referenceBlock name="head.additional">
+            <referenceBlock name="ampcss">
+                <block class="Zemez\Amp\Block\Page\Head\Style" name="ampcss.product" as="ampcss.product" template="Zemez_Amp::head/css/product.phtml"/>
+            </referenceBlock>
+        	<referenceBlock name="ampjs">
+                <action method="addJs">
+                    <argument name="src" xsi:type="string">https://cdn.ampproject.org/v0/amp-iframe-0.1.js</argument>
+                    <argument name="type" xsi:type="string">amp-iframe</argument>
+                </action>
+                <action method="addJs">
+                    <argument name="src" xsi:type="string">https://cdn.ampproject.org/v0/amp-form-0.1.js</argument>
+                    <argument name="type" xsi:type="string">amp-form</argument>
+                </action>
+                <action method="addJs">
+                    <argument name="src" xsi:type="string">https://cdn.ampproject.org/v0/amp-vimeo-0.1.js</argument>
+                    <argument name="type" xsi:type="string">amp-vimeo</argument>
+                </action>
+                <action method="addJs">
+                    <argument name="src" xsi:type="string">https://cdn.ampproject.org/v0/amp-accordion-0.1.js</argument>
+                    <argument name="type" xsi:type="string">amp-accordion</argument>
+                </action>
+				<action method="addJs">
+					<argument name="src" xsi:type="string">https://cdn.ampproject.org/v0/amp-mustache-0.1.js</argument>
+					<argument name="type" xsi:type="string">amp-mustache</argument>
+					<argument name="element" xsi:type="string">template</argument>
+				</action>
+        	</referenceBlock>
+            <block class="Zemez\Amp\Block\Page\Head\Tm\Product" name="metatags" as="metatags" template="Zemez_Amp::head/metatags.phtml"/>
+            <block class="Zemez\Amp\Block\Page\Head\Json\Product" name="json" as="json" template="Zemez_Amp::head/ampjson.phtml"/>
+    	</referenceBlock>
+        <referenceContainer name="amp.content">
+            <container name="amp.product.info.media" htmlTag="div" htmlClass="amp-product-media" before="product.info.main">
+                <block class="Magento\Catalog\Block\Product\View\Gallery" name="product.info.media.image" template="Zemez_Amp::catalog/product/view/gallery.phtml"/>
+            </container>
+            <container name="amp.product.details" htmlTag="div" htmlClass="amp-product-details" after="amp.product.info.media">
+                <block class="Magento\Catalog\Block\Product\View" name="product.info.name" template="Zemez_Amp::catalog/product/view/name.phtml" after="product.info.review" />
+                <block class="Magento\Catalog\Block\Product\View" name="product.info.review" template="product/view/review.phtml" before="-" />
+                <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.short_description" template="Zemez_Amp::catalog/product/view/attribute.phtml" group="detailed_info" after="product.info.name">
+                    <arguments>
+                        <argument name="at_call" xsi:type="string">getShortDescription</argument>
+                        <argument name="at_code" xsi:type="string">short_description</argument>
+                        <argument name="css_class" xsi:type="string">short_description</argument>
+                    </arguments>
+                </block>
+                <container name="product.info.main" htmlTag="div" htmlClass="amp-product-info-main" before="-">
+                    <container name="product.info.price" label="Product info auxiliary container" htmlTag="div" htmlClass="amp-product-info-price" after="product.info.review">
+                        <container name="product.info.stock.sku" label="Product auxiliary info" htmlTag="div" htmlClass="amp-product-info-stock-sku">
+                            <container name="product.info.type" before="-"/>
+                            <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku" template="Zemez_Amp::catalog/product/view/attribute.phtml" after="product.info.type">
+                                <arguments>
+                                    <argument name="at_call" xsi:type="string">getSku</argument>
+                                    <argument name="at_code" xsi:type="string">sku</argument>
+                                    <argument name="css_class" xsi:type="string">sku</argument>
+                                    <argument name="at_label" xsi:type="string">default</argument>
+                                </arguments>
+                            </block>
+                        </container>
+                        <block class="Magento\Catalog\Pricing\Render" name="product.price.final" after="product.info.sku">
+                            <arguments>
+                                <argument name="price_render" xsi:type="string">product.price.render.default</argument>
+                                <argument name="price_type_code" xsi:type="string">final_price</argument>
+                                <argument name="zone" xsi:type="string">item_view</argument>
+                            </arguments>
+                        </block>
+                    </container>
+                    <block class="Magento\Catalog\Pricing\Render" name="product.price.tier" after="product.info.price">
+                        <arguments>
+                            <argument name="price_render" xsi:type="string">product.price.render.default</argument>
+                            <argument name="price_type_code" xsi:type="string">tier_price</argument>
+                            <argument name="zone" xsi:type="string">item_view</argument>
+                        </arguments>
+                    </block>
+                    <container name="alert.urls" as="amp_alert_urls" label="AMP Alert Urls" before="product.info.price"/>
+                    <block class="Magento\Catalog\Block\Product\View" name="product.info" template="Zemez_Amp::catalog/product/view/form.phtml" after="product.price.tier">
+                        <arguments>
+                            <argument name="iframe_width" xsi:type="string">400</argument>
+                            <argument name="iframe_height" xsi:type="string">500</argument>
+                        </arguments>
+                        <container name="product.info.form.content" as="amp_product_info_form_content">
+                            <block class="Magento\Catalog\Block\Product\View" name="product.info.addtocart" as="amp_addtocart" template="Zemez_Amp::catalog/product/view/addtocart.phtml"/>
+                        </container>
+                    </block>
+                </container>
+            </container>
+            <container name="amp.product.details.tabs" htmlTag="div" htmlClass="amp-product-details-tabs" after="amp.product.details">
+                <block class="Magento\Catalog\Block\Product\View\Description" name="amp.product.info.details" template="Zemez_Amp::catalog/product/view/details.phtml" after="amp.product.info.description">
+                    <block class="Magento\Catalog\Block\Product\View\Description" name="amp.product.info.tab1" as="amp.product.info.description" template="Zemez_Amp::catalog/product/view/attribute.phtml" group="detailed_info">
+                        <arguments>
+                            <argument name="at_call" xsi:type="string">getDescription</argument>
+                            <argument name="at_code" xsi:type="string">description</argument>
+                            <argument name="css_class" xsi:type="string">description</argument>
+                            <argument translate="true" name="title" xsi:type="string">Description</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Catalog\Block\Product\View\Attributes" name="amp.product.info.tab2" as="amp.product.attributes" template="Zemez_Amp::catalog/product/view/attributes.phtml" group="detailed_info" after="amp.product.info.main">
+                        <arguments>
+                            <argument translate="true" name="title" xsi:type="string">More Information</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Review\Block\Product\Review"  name="amp.product.info.tab3" as="amp.reviews.tab" template="Zemez_Amp::review/review.phtml" group="detailed_info">
+                        <block class="Magento\Review\Block\Product\View\ListView" name="amp.product.reviews.list" template="Zemez_Amp::review/product/view/list.phtml"/>
+                    </block>
+                </block>
+            </container>
+            <container name="amp.product.items.block" htmlTag="div" htmlClass="amp-product-items-block" after="-">
+                <referenceBlock name="catalog.product.related" remove="true"/>
+                <block class="Magento\Catalog\Block\Product\ProductList\Related" name="catalog.product.related" template="Zemez_Amp::catalog/product/list/items.phtml" before="-">
+                    <arguments>
+                        <argument name="type" xsi:type="string">related</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Catalog\Block\Product\ProductList\Upsell" name="product.info.upsell" template="Zemez_Amp::catalog/product/list/items.phtml" before="-">
+                    <arguments>
+                        <argument name="type" xsi:type="string">upsell</argument>
+                    </arguments>
+                </block>
+            </container>
+            <referenceContainer name="product.info.social"    remove="true"/>
+        </referenceContainer>
+        <referenceBlock name="page.main.title" remove="true" />
+    </body>
+</page>

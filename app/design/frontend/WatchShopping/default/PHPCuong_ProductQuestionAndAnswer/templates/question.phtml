@@ -1,0 +1,24 @@
+<?php
+/**
+ * Copyright © 2013-2017 GiaPhuGroup Ltd. All rights reserved.
+ * See COPYING.txt for license details.
+ *
+ * @var $block \PHPCuong\ProductQuestionAndAnswer\Block\Product\Question
+ */
+?>
+
+<div class="product-question-container" data-role="product-question" data-mage-init='{"PHPCuong_ProductQuestionAndAnswer/js/process-questions": {"productQuestionUrl": "<?php /* @escapeNotVerified */ echo $block->getProductQuestionUrl();?>"}}'></div>
+<?php echo $block->getChildHtml(); ?>
+
+<script type="text/x-magento-init">
+    {
+
+        ".product-question-container": {
+            "PHPCuong_ProductQuestionAndAnswer/js/process-like-dislike": {
+                "likeDislikeUrl": "<?php /* @escapeNotVerified */ echo $block->getLikeDislikeUrl();?>",
+                "loadingNumberImage": "<?php echo $block->getViewFileUrl('PHPCuong_ProductQuestionAndAnswer::images/loading-number.gif'); ?>"
+            }
+        }
+    }
+</script>
+

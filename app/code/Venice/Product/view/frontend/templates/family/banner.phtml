@@ -1,0 +1,13 @@
+<?php
+/** @var \Venice\Product\Block\Family\View $block */
+$brand=$block->getBrand();
+$helper=$block->getBrandHelper();
+?>
+
+<?php if ($helper->isShowBrandBanner() && $brand->getBrandBanner()): ?>
+    <div class="brand-collection-banner">
+    <div class="brand-banner-bg" style="background:url(<?php  echo $helper->resizeImageUrl($brand->getBrandBanner(), 1050, null, 'banner'); ?>) no-repeat left top /auto 100%"> 
+    <?php echo $this->getChildHtml('family.description') ?> 
+    </div>
+    </div>
+<?php endif; ?>

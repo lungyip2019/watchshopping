@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="TemplateMonster\Blog\Block\Post\PostList" name="blog.list"
+                   template="TemplateMonster_Blog::post/list/items.phtml">
+
+                <block class="TemplateMonster\Blog\Block\Post\PostList\Toolbar" name="blog.toolbar" as="blog_toolbar"
+                       template="TemplateMonster_Blog::post/list/toolbar.phtml" >
+                    <block class="Magento\Theme\Block\Html\Pager" name="product_list_toolbar_pager"/>
+                    <block class="TemplateMonster\Blog\Block\Post\PostList\Toolbar" name="blog.toolbar.sorter"
+                           as="blog_sorter" template="TemplateMonster_Blog::post/list/toolbar/sorter.phtml">
+                    </block>
+                </block>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="sidebar.additional">
+            <block class="TemplateMonster\Blog\Block\Sidebar\Categories" name="blog.categories.sidebar"
+                   template="TemplateMonster_Blog::sidebar/categories.phtml"
+                   ifconfig="tm_blog/sidebar/show_categories"
+                   before="-">
+            </block>
+            <block class="TemplateMonster\Blog\Block\Sidebar\Posts" name="blog.posts.sidebar"
+                   template="TemplateMonster_Blog::sidebar/posts.phtml"
+                   ifconfig="tm_blog/sidebar/show_posts"
+                   after="blog.categories.sidebar">
+            </block>
+            <block class="TemplateMonster\Blog\Block\Sidebar\Comments" name="blog.comments.sidebar"
+                   template="TemplateMonster_Blog::sidebar/comments.phtml"
+                   ifconfig="tm_blog/sidebar/show_comments"
+                   after="blog.posts.sidebar">
+            </block>
+        </referenceContainer>
+    </body>
+</page>

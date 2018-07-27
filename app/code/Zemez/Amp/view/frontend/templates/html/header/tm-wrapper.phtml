@@ -1,0 +1,12 @@
+<?php
+	$helperCart = $this->helper('Magento\Checkout\Helper\Cart');
+	$_helperAmp = $this->helper('Zemez\Amp\Helper\Data');
+?>
+
+<a class="home-page-lnk" href="<?php echo $_helperAmp->getCanonicalUrl($block->getUrl('')); ?>" title="Home"><span class="material-icon material-icons-home"></span></a>
+
+<?php echo $block->getChildHtml('amp-authorization-link-login') ?>
+
+<a href="<?php echo $helperCart->getCartUrl() ?>" class="material-icon cart"></a>
+
+<button class="material-icon mobile-menu" on="tap:main-menu"></button>

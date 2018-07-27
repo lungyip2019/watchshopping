@@ -1,0 +1,11 @@
+<?php
+$postCollection = $block->getCollection();
+
+if ($postCollection->count()): ?>
+    <div class="toolbar toolbar-products toolbar-posts"
+         data-mage-init='<?php /* @escapeNotVerified */ echo $block->getWidgetOptionsJson(); ?>'>
+        <?php include ($block->getTemplateFile('TemplateMonster_Blog::post/list/toolbar/limiter.phtml')) ?>
+        <?php include ($block->getTemplateFile('TemplateMonster_Blog::post/list/toolbar/sorter.phtml')) ?>
+        <?php echo $block->getPagerHtml() ?>
+    </div>
+<?php endif ?>

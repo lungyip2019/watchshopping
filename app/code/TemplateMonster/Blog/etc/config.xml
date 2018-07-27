@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <tm_blog>
+            <general>
+                <active>1</active>
+                <menu_active>1</menu_active>
+                <title>Blog</title>
+                <route>blog</route>
+                <limits>3/6/9</limits>
+                <data_format>M d, Y</data_format>
+            </general>
+            <post_view>
+                <related_posts>
+                    <enabled>1</enabled>
+                    <posts_number>5</posts_number>
+                    <posts_number_per_view>4</posts_number_per_view>
+                </related_posts>
+                <related_products>
+                    <enabled>1</enabled>
+                    <products_number>5</products_number>
+                    <products_number_per_view>3</products_number_per_view>
+                    <show_links>1</show_links>
+                </related_products>
+            </post_view>
+    </tm_blog>
+    </default>
+</config>

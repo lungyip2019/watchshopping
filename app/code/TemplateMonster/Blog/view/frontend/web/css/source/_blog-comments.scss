@@ -1,0 +1,79 @@
+// Main styles
+
+.post-comments-block {
+
+    margin-bottom: 68px;
+
+    .post-comments-content {
+      margin-bottom: 48px;
+    }
+
+    .post-comment {
+        background: $comment-bg;
+        padding:$comment-indent;
+        margin-bottom: $comment-margin;
+    }
+
+    .comment-info {
+        overflow: hidden;
+        padding: 0 0 3px 0;
+        margin-bottom: 15px;
+        border-bottom: solid 1px $data-border-color;
+
+        .post-data {
+            float: right;
+            margin: 0 0 0 5px;
+            border: none;
+            padding: 0;
+
+            .create-date {
+                margin: 0;
+
+                time {
+                    display: inline-block;
+                }
+            }
+        }
+
+        .comment-author {
+            margin-top: 0; 
+        }
+    }
+
+    .post-comments-title {}
+
+    .comment-add {
+        .subtitle {
+           margin-bottom: 30px;
+        }
+
+        .fieldset {
+            margin-bottom: 0;
+            .field {
+              margin-bottom: 28px;
+            }
+        }
+
+        @media (min-width: 767px) {
+            label.label {
+                float: left;
+                margin: 0;
+                min-width: $label-width;
+            }
+
+            .control {
+                overflow: hidden;
+
+                input {
+                    width: 327px;
+                }
+                textarea {
+                    height: 242px;
+                }
+            }
+            .comment-form-actions {
+                margin-left: $label-width;
+            }
+        }
+    }
+}

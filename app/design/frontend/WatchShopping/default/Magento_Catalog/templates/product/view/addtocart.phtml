@@ -1,0 +1,85 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var $block \Magento\Catalog\Block\Product\View */
+$catalog_mode = $this->helper('Venice\Product\Helper\AddToCartHelper')->getConfig('venice/product/catalog_mode');
+$catalog_mode_msg = $this->helper('Venice\Product\Helper\AddToCartHelper')->getConfig('venice/product/catalog_mode_msg');
+?>
+
+<?php $_product = $block->getProduct(); ?>
+<?php $buttonTitle = __('Add to Cart'); ?>
+
+
+<?php if ($catalog_mode):?>
+    <?php $buttonTitle = __('Call Us');?>
+    <div class="box-tocart">
+        <div class="fieldset">
+            <div class="actions disablebtn">
+                <button type="submit"
+                        class="action primary tocart"
+                        title="<?= /* @escapeNotVerified */ $buttonTitle ?>"
+                        id="product-addtocart-button" disabled>
+                    <span><?= /* @escapeNotVerified */ $buttonTitle ?></span>
+                </button>
+                <span><?php echo $catalog_mode_msg ?></span>
+            </div>
+        </div>
+    </div>
+<?php else : ?>
+<?php if ($_product->isSaleable()): ?>
+<div class="box-tocart">
+    <div class="fieldset">
+        <?php if ($block->shouldRenderQuantity()): ?>
+        <div class="field qty">
+            <label class="label" for="qty"><span><?= /* @escapeNotVerified */ __('Qty') ?></span></label>
+            <div class="control">
+                <!-- change to hidden for submiting only default quantity to cart -->
+                <input type="hidden"
+                       name="qty"
+                       id="qty"
+                       value="<?= /* @escapeNotVerified */ $block->getProductDefaultQty() * 1 ?>"
+                       title="<?= /* @escapeNotVerified */ __('Qty') ?>"
+                       class="input-text qty"
+                       data-validate="<?= $block->escapeHtml(json_encode($block->getQuantityValidators())) ?>"
+                       />
+            </div>
+        </div>
+        <?php endif; ?>
+        <div class="actions">
+            <button type="submit"
+                    title="<?= /* @escapeNotVerified */ $buttonTitle ?>"
+                    class="action primary tocart"
+                    id="product-addtocart-button">
+                <span><?= /* @escapeNotVerified */ $buttonTitle ?></span>
+            </button>
+            <?= $block->getChildHtml('', true) ?>
+        </div>
+    </div>
+</div>
+<?php endif; ?>
+<?php if ($block->isRedirectToCartEnabled()) : ?>
+<script type="text/x-magento-init">
+    {
+        "#product_addtocart_form": {
+            "Magento_Catalog/product/view/validation": {
+                "radioCheckboxClosest": ".nested"
+            }
+        }
+    }
+</script>
+<?php else : ?>
+<script type="text/x-magento-init">
+    {
+        "#product_addtocart_form": {
+            "Magento_Catalog/js/validate-product": {}
+        }
+    }
+</script>
+<?php endif; ?>
+<?php endif; ?>
+

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+ 
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/watchspec/:specId" method="GET">
+        <service class="Venice\Product\Api\WatchSpecRepositoryInterface" method="getById"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/watchspec" method="POST">
+        <service class="Venice\Product\Api\WatchSpecRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V2/family/:familyId" method="GET">
+        <service class="Venice\Product\Api\FamilyRepositoryInterface" method="getById"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V2/family" method="POST">
+        <service class="Venice\Product\Api\FamilyRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+</routes>

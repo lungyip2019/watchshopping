@@ -1,0 +1,27 @@
+<div class="shop-collection">
+    <div class="block-title"><strong>Shop the Collection</strong></div>
+    <ol class="product-items" data-bind="foreach: productList">
+        <li class="product-item">        
+            <div class="product-item-info">       
+                <a data-bind="attr: { href: url }" class="product photo product-item-photo">
+                    <span class="product-image-container">
+                        <span class="product-image-wrapper">
+                            <img class="product-image-photo" data-bind="attr: { src : src , alt: name}"/>
+                        </span>
+                    </span>
+                </a>
+                <div class="product details product-item-details">
+                    <strong data-bind="text:brand" class="product brand product-item-brand">
+                    </strong>
+                    <strong data-bind="text:name" class="product name product-item-name">
+                    </strong>
+                    <span class="product sku product-item-sku" data-bind="text:sku"></span>
+		</div>
+            </div>
+        </li>
+    </ol>
+	<div class="view-more-box">
+    	<button class="action primary" data-bind="{click:getProduct,visible:loadMore}">View More</button>
+	</div>
+</div>
+

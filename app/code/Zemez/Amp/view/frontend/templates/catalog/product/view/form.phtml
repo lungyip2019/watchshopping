@@ -1,0 +1,25 @@
+<?php
+/**
+ * Product view template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View
+ */
+?>
+<?php 
+	$_helper = $this->helper('Magento\Catalog\Helper\Output');
+	$_helperAmp = $this->helper('Zemez\Amp\Helper\Data');
+	$_product = $block->getProduct();
+	$_iframeSrc = $_helperAmp->getIframeSrc($_product);
+?>
+<div class="amp-product-addtocart">
+    <?php if ($_product->isSaleable()) : ?>
+		<?php if ($_product->isInStock()):?>
+	        <a href="<?php echo $_helperAmp->getCanonicalUrl($_product->getProductUrl(), ['canonical'=>1]) ?>"><?php echo __('View Details') ?></a>
+		<?php else : ?>
+            <div class="stock unavailable"><span><?php echo __('Out of stock') ?></span></div>
+		<?php endif; ?>
+
+    <?php else : ?>
+        <div class="stock unavailable"><span><?php echo __('Out of stock') ?></span></div>
+    <?php endif; ?>
+</div>

@@ -1,0 +1,114 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * Product watch spec template, display data in product_watchspec
+ */
+
+/** @var \Venice\Product\Block\WatchSpecSheet $block */
+$product = $block->getProduct();
+$product_style = $product->getAttributeText("style");
+?>
+<div class="specification-wrapper">
+    
+    <?php if ($detail = $block->getDetail()): ?>
+        <div class="product-description">
+            <div class="description"><?php echo isset($detail['watch']['description'])?$detail['watch']['description']:""?></div>
+        </div>
+        <div class="attributes">
+            <div class="attributes-group">
+                <h3>Information</h3>
+                <ul>
+                    <li>
+                        <label><span>Brand</span></label>
+                        <div><span><?php echo isset($detail['watch']['brand']['name'])?$detail['watch']['brand']['name']:""?></span></div>                
+                    </li>
+                    <li>
+                        <label><span>Series</span></label>
+                        <div><span><?php echo isset($detail['watch']['family']['name'])?$detail['watch']['family']['name']:""?></span></div>                
+                    </li>
+                    <li>
+                        <label><span>Gender</span></label>
+                        <div><span><?php echo isset($detail['watch']['gender'])?$detail['watch']['gender']:""?></span></div>                
+                    </li>
+                    <li>
+                        <label><span>Model</span></label>
+                        <div><span><?php echo isset($detail['watch']['reference_number'])?$detail['watch']['reference_number']:""?></span></div>                
+                    </li>
+                </ul>
+            </div>
+            <div class="attributes-group">
+                <h3>Case</h3>
+                <ul>
+                    <li>
+                        <label><span>Diameter</span></label>
+                        <div><span><?php echo isset($detail['watch']['case']['diameter'])?$detail['watch']['case']['diameter']:""?></span></div>                
+                    </li>
+                    <li>
+                        <label><span>Thickness</span></label>
+                        <div><span><?php echo isset($detail['watch']['case']['height'])?$detail['watch']['case']['height']:""?></span></div>                
+                    </li>
+                    <li>
+                        <label><span>Shape</span></label>
+                        <div><span><?php echo isset($detail['watch']['case']['shape'])?$detail['watch']['case']['shape']:""?></span></div>                
+                    </li>
+                    <li>
+                        <label><span>Material</span></label>
+                        <div><span><?php echo isset($detail['watch']['case']['materials'])?implode($detail['watch']['case']['materials']):""?></span></div>                
+                    </li>
+                    <li>
+                        <label><span>Back</span></label>
+                        <div><span><?php echo isset($detail['watch']['case']['back'])?$detail['watch']['case']['back']:""?></span></div>                
+                    </li>
+                </ul>
+            </div>
+            <div class="attributes-group">
+                <h3>Dial</h3>
+                <ul>
+                    <li>
+                        <label><span>Type</span></label>
+                        <div><span><?php echo isset($detail['watch']['caliber']['display'])?$detail['watch']['caliber']['display']:"" ?></span></div>                
+                    </li>
+                    <li>
+                        <label><span>Colour</span></label>
+                        <div><span><?php echo isset($detail['watch']['dial']['color'])?$detail['watch']['dial']['color']:""?></span></div>                
+                    </li>
+                   
+                </ul>
+            </div>
+            <div class="attributes-group">
+                <h3>Features</h3>
+                <ul>
+                    <li>
+                        <label><span>Water Resistance</span></label>
+                        <div><span><?php echo $detail['watch']['waterresistance']?></span></div>                
+                    </li>
+                </ul>
+            </div>
+            <div class="attributes-group">
+                <h3>Band</h3>
+                <ul>
+                    <li>
+                        <label><span>Material</span></label>
+                        <div><span><?php echo $product->getAttributeText("band_type")?></span></div>                
+                    </li>
+                </ul>
+            </div>
+            <div class="attributes-group">
+                <h3>Additional Info</h3>
+                <ul>
+                    <li>
+                        <label><span>Style</span></label>
+                        <div><span><?php echo $product_style?></span></div>                
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <?php endif;?>
+</div>
+

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<page layout="tm_amp" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+  <update handle="zamp_cms_page_view"/>
+  <body>
+    <referenceBlock name="head.additional">
+      <referenceBlock name="ampcss">
+        <block class="Zemez\Amp\Block\Page\Head\Style" name="ampcss.index" as="ampcss.index" template="Zemez_Amp::head/css/index.phtml"/>
+      </referenceBlock>
+      <block class="Zemez\Amp\Block\Page\Head\Tm\Cms" name="metatags" as="metatags" template="Zemez_Amp::head/metatags.phtml"/>
+      <block class="Zemez\Amp\Block\Page\Head\Json\Cms" name="json" as="json" template="Zemez_Amp::head/ampjson.phtml"/>
+    </referenceBlock>
+  </body>
+</page>

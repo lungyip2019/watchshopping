@@ -1,0 +1,13 @@
+<?php $columnsLimit = $block->getColumnsLimit() ?: 0; ?>
+<?php $_menu = $block->getHtml('level-top', 'submenu', $columnsLimit) ?>
+
+<input type="checkbox" id="hide-item-amp-navigation">
+ <amp-lightbox id="main-menu" layout="nodisplay" scrollable>
+	<nav class="amp-navigation">
+	    <ul>
+	        <?php echo $_menu; ?>
+	        <?php echo $block->getChildHtml(); ?>
+	    </ul>
+	</nav>
+	<a on="tap:main-menu.close" role="button" tabindex="0" class="filter-close-btn"><i class="material-icon material-icons-close"></i></a>
+</amp-lightbox>

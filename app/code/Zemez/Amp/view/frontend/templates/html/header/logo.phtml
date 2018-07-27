@@ -1,0 +1,23 @@
+<?php
+	$storeName = $block->getThemeName() ? $block->getThemeName() : $block->getLogoAlt();
+	$_helperAmp = $this->helper('Zemez\Amp\Helper\Data');
+	$logoImageWidth = $_helperAmp->getLogoImageWidth();
+	$logoImageHeight = $_helperAmp->getLogoImageHeight();
+?>
+
+<div class="amp-logo-container">
+	<a class="amp-logo" href="<?php echo $block->getUrl(''); ?>" title="<?php echo $storeName ?>">
+	    <amp-img
+	        height="<?php echo $logoImageHeight; ?>"
+	        width="<?php echo $logoImageWidth; ?>"
+			src="<?php 
+					if (!$_helperAmp->getLogoSrc()){
+						echo $block->getLogoSrc();
+					} else {
+						echo $_helperAmp->getLogoSrc();
+					}
+				?>"
+	        alt="<?php echo $block->getLogoAlt(); ?>"
+	    ></amp-img>	
+	</a>
+</div>

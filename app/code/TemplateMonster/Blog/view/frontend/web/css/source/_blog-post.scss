@@ -1,0 +1,95 @@
+// Main styles
+
+.post-page {
+    clear: both;
+    font-family: $font;
+    width: 100%;
+
+    // Post text
+    .post-text {
+        margin-bottom: 25px;
+    }
+
+    // Post data
+    .post-data {
+        border-top: solid 1px $data-border-color;
+        padding: 13px 0 0;
+        margin-bottom: 50px;
+        color: $post-data-color;
+
+        .create-date,
+        .post-author,
+        .post-comments {
+            display: inline-block;
+            margin-right: 20px;
+
+            span, a {
+                display: inline-block;
+            }
+            a {
+                color: $post-data-color;
+                text-decoration: none;
+                &:hover {
+                    color: $color;
+                }
+            }
+            a span:before,
+            &:before {
+                font-size: 18px;
+                line-height: 18px;
+                padding-right: 4px;
+                color: $color;
+                vertical-align: middle;
+            }
+        }
+        .create-date {
+            time {
+                display: inline-block;
+            }
+        }
+        .post-author {}
+        .post-comments {}
+
+        @media (max-width: 480px) {
+            overflow: hidden;
+
+            .create-date,
+            .post-author,
+            .post-comments{
+                display: block;
+                margin-bottom: 3px;
+            }
+        }
+    }
+
+    .post-relatedproducts{
+
+        .block.related {
+            float: none;
+
+            .owl-carousel {
+                .product-item {
+                    width: 100%;
+                }
+            }
+
+
+                .product-item{
+                    width: 33.33%;
+                    .product-item-info {
+                        width: 100%;
+                        padding: 0;
+                        margin: 0;
+                        box-shadow: none;
+                        border: none;
+                    }
+
+                    .product-item-photo {
+                        display: block;
+                        text-align: center;
+                    }
+                }
+
+        }
+    }
+}

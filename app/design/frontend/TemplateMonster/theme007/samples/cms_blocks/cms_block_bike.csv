@@ -1,0 +1,113 @@
+block_id,title,identifier,content,creation_time,update_time,is_active
+18,block_1_layout_3,block_1_layout_3,"<div class=""custom-item-7"">
+    <div class=""item"">
+        <img src=""{{view url=''}}/images/media/img_14_layout_3.jpg""/>
+        <div class=""custom-item-content"">
+            <div class=""title-1"">New Arrivals</div>
+            <div class=""desc-1"">Simple, comfy and practical</div>
+            <a class=""link-custom"" href=""{{store url=''}}cycling-clothing.html"">Shop now</a>
+        </div>
+    </div>
+    <div class=""item extra-position"">
+        <img src=""{{view url=''}}/images/media/img_15_layout_3.jpg""/>
+        <div class=""custom-item-content"">
+            <div class=""title-1"">The Limited Edition</div>
+            <div class=""desc-1"">Hurry up while stocks last</div>
+            <a class=""link-custom"" href=""{{store url=''}}/bike-tools-transport.html"">Shop now</a>
+        </div>
+    </div>
+    <div class=""item"">
+        <img src=""{{view url=''}}/images/media/img_16_layout_3.jpg""/>
+        <div class=""custom-item-content"">
+            <div class=""title-1"">Special Offer</div>
+            <div class=""desc-1"">Big bike sale now on!</div>
+            <a class=""link-custom"" href=""{{store url=''}}tires-tubes-wheels.html"">Shop now</a>
+        </div>
+    </div>
+</div>
+",2016-12-06 06:13:40,2016-12-06 06:13:40,1
+19,block_2_layout_3,block_2_layout_3,"<div class=""custom-item-8"">
+    <div class=""item"">
+        <img src=""{{view url=''}}/images/media/img_17_layout_3.jpg""/>
+        <div class=""custom-item-content"">
+            <div class=""title-1"">Road Bikes</div>
+            <div class=""desc-1"">Powerful and easy to use</div>
+            <a class=""link-custom"" href=""{{store url=''}}bike-tools-transport.html"">Shop now</a>
+        </div>
+    </div>
+    <div class=""item extra-position"">
+        <img src=""{{view url=''}}/images/media/img_18_layout_3.jpg""/>
+        <div class=""custom-item-content"">
+            <div class=""title-1"">Women’s bikes</div>
+            <div class=""desc-1"">Helping to inspire women in sport</div>
+            <a class=""link-custom"" href=""{{store url=''}}cycling-clothing.html"">Shop now</a>
+        </div>
+    </div>
+</div>
+",2016-12-06 06:14:29,2016-12-06 06:14:29,1
+27,block_3_2_layout_3,block_3_2_layout_3,"<div class=""custom-item-14"">
+    <div class=""custom-item-content"">
+        <div class=""title-1"">Buy & Ride</div>
+        <div class=""desc-1"">Meeting the needs of each cyclist</div>
+        <a class=""link-custom"" href=""{{store url=''}}tires-tubes-wheels.html"">Shop now!</a>
+    </div>
+    <div class=""custom-img-content"">
+        <img src=""{{view url=''}}/images/media/img_27_bike.jpg""/>
+    </div>
+</div>",2016-12-21 07:37:43,2016-12-21 07:37:43,1
+28,block_4_2_layout_3,block_4_2_layout_3,"<div class=""custom-item-15"">
+    <div class=""custom-item-content"">
+        <div class=""title-1"">Women’s Bikes</div>
+        <div class=""desc-1"">Helping to inspire women in sport</div>
+        <a class=""link-custom"" href=""{{store url=''}}tires-tubes-wheels.html"">Shop now!</a>
+    </div>
+    <div class=""custom-img-content"">
+        <img src=""{{view url=''}}/images/media/img_28_bike.jpg""/>
+    </div>
+</div>",2016-12-21 07:42:15,2016-12-21 23:28:08,1
+33,block_5_3_layout_3,block_5_3_layout_3,"<div class=""custom-item-7 custom-item-24"">
+    <div class=""item"">
+        <img src=""{{view url=''}}/images/media/img_14_layout_3.jpg""/>
+        <div class=""custom-item-content"">
+            <div class=""title-1"">New Arrivals</div>
+            <div class=""desc-1"">Simple, comfy and practical</div>
+            <a class=""link-custom"" href=""{{store url=''}}cycling-clothing.html"">Shop now</a>
+        </div>
+    </div>
+    <div class=""item extra-position"">
+        <img src=""{{view url=''}}/images/media/img_15_layout_3.jpg""/>
+        <div class=""custom-item-content"">
+            <div class=""title-1"">The Limited Edition</div>
+            <div class=""desc-1"">Hurry up while stocks last</div>
+            <a class=""link-custom"" href=""{{store url=''}}/bike-tools-transport.html"">Shop now</a>
+        </div>
+    </div>
+    <div class=""item"">
+        <img src=""{{view url=''}}/images/media/img_16_layout_3.jpg""/>
+        <div class=""custom-item-content"">
+            <div class=""title-1"">Special Offer</div>
+            <div class=""desc-1"">Big bike sale now on!</div>
+            <a class=""link-custom"" href=""{{store url=''}}tires-tubes-wheels.html"">Shop now</a>
+        </div>
+    </div>
+</div>
+",2017-01-13 05:53:07,2017-01-13 05:53:07,1
+34,block_6_3_layout_3,block_6_3_layout_3,"<div class=""custom-item-8"">
+    <div class=""item"">
+        <img src=""{{view url=''}}/images/media/img_17_layout_3.jpg""/>
+        <div class=""custom-item-content"">
+            <div class=""title-1"">Road Bikes</div>
+            <div class=""desc-1"">Powerful and easy to use</div>
+            <a class=""link-custom"" href=""{{store url=''}}bike-tools-transport.html"">Shop now</a>
+        </div>
+    </div>
+    <div class=""item extra-position"">
+        <img src=""{{view url=''}}/images/media/img_18_layout_3.jpg""/>
+        <div class=""custom-item-content"">
+            <div class=""title-1"">Women’s bikes</div>
+            <div class=""desc-1"">Helping to inspire women in sport</div>
+            <a class=""link-custom"" href=""{{store url=''}}cycling-clothing.html"">Shop now</a>
+        </div>
+    </div>
+</div>
+",2017-01-13 05:53:32,2017-01-13 10:19:44,1

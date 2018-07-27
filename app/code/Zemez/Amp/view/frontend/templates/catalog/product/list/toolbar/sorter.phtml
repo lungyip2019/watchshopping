@@ -1,0 +1,41 @@
+<?php
+/**
+ * Product list toolbar
+ *
+ * @var $block \Magento\Catalog\Block\Product\ProductList\Toolbar
+ */
+use Magento\Catalog\Model\Product\ProductList\Toolbar as Toolbar;
+?>
+<div class="toolbar-sorter sorter">
+	<input type="checkbox" id="sorter-hider">
+    <label class="sorter-label" for="sorter-hider"><?php echo __('Sort By') ?></label>
+    <div class="sorter-position">
+    	<?php foreach ($block->getAvailableOrders() as $_key => $_order): ?>
+    			<?php
+    				$direction = strtolower($block->getCurrentDirection());
+    				if ($block->isOrderCurrent($_key)) {
+    					$direction = $direction == 'asc' ? 'desc' : 'asc';
+    				}
+    	
+    				$params = array(
+    					Toolbar::ORDER_PARAM_NAME => $_key,
+    					Toolbar::DIRECTION_PARAM_NAME => $direction,
+    				);
+    	
+    				if ($block->getDefaultPerPageValue() !== $block->getLimit()) {
+    					$params[Toolbar::LIMIT_PARAM_NAME] = $block->getLimit();
+    				}
+    	
+    			?>
+    			<a class="sort-product <?php if($block->isOrderCurrent($_key)): ?> sorter-active<?php endif; ?>" href="<?php echo $block->getPagerUrl($params) ?>">
+    			<?php echo $block->escapeHtml(__($_order)) ?></a>
+    	<?php endforeach; ?>
+    </div>
+   
+        <a class="sort-by-switcher sort-desc  <?php if ($block->getCurrentDirection() == 'desc'): ?>active<?php endif; ?>" title="<?php echo __('Ascending') ?>" href="<?php echo $block->getPagerUrl(array(Toolbar::DIRECTION_PARAM_NAME => 'desc')) ?>">
+            <span><?php echo __('desc') ?></span>
+        </a>
+        <a class="sort-by-switcher sort-asc   <?php if ($block->getCurrentDirection() == 'asc'): ?>active<?php endif; ?>" title="<?php echo __('Descending') ?>" href="<?php echo $block->getPagerUrl(array(Toolbar::DIRECTION_PARAM_NAME => 'asc')) ?>">
+            <span><?php echo __('asc') ?></span>
+        </a>
+</div>

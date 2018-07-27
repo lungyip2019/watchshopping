@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<page layout="tm_amp" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+  <body>
+    <referenceBlock name="head.additional">
+      <block class="Zemez\Amp\Block\Page\Head\Tm\Cms" name="metatags" as="metatags" template="Zemez_Amp::head/metatags.phtml"/>
+      <block class="Zemez\Amp\Block\Page\Head\Json\Cms" name="json" as="json" template="Zemez_Amp::head/ampjson.phtml"/>
+    </referenceBlock>
+    <referenceBlock name="ampjs">
+      <action method="addJs">
+        <argument name="src" xsi:type="string">https://cdn.ampproject.org/v0/amp-iframe-0.1.js</argument>
+        <argument name="type" xsi:type="string">amp-iframe</argument>
+      </action>
+      <action method="addJs">
+        <argument name="src" xsi:type="string">https://cdn.ampproject.org/v0/amp-form-0.1.js</argument>
+        <argument name="type" xsi:type="string">amp-form</argument>
+      </action>
+      <action method="addJs">
+        <argument name="src" xsi:type="string">https://cdn.ampproject.org/v0/amp-mustache-0.1.js</argument>
+        <argument name="type" xsi:type="string">amp-mustache</argument>
+        <argument name="element" xsi:type="string">template</argument>
+      </action>
+    </referenceBlock>
+    <referenceContainer name="amp.content">
+      <block class="Magento\Cms\Block\Page" name="cms_page"/>
+    </referenceContainer>
+  </body>
+</page>

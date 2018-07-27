@@ -1,0 +1,121 @@
+page_id,title,page_layout,meta_keywords,meta_description,identifier,content_heading,content,creation_time,update_time,is_active,sort_order,layout_update_xml,custom_theme,custom_root_template,custom_layout_update_xml,custom_theme_from,custom_theme_to,meta_title
+11,FAQ,1column,,,faq,FAQ,"<div class=""faq-page row"">
+	<div class=""col-md-8 col-md-preffix-2"">
+		<div id=""faq-accordion"">
+			<div class=""accordion-block close"">
+				<div class=""accordion-trigger close"">
+					<span>Is it necessary for me to register an account in order to buy an item?</span>
+				</div>
+				<div class=""accordion-content"">
+					<p> Yes and this is made with your own convenience in mind.  By creating (or using) an account during the  purchasing process you will have 3 things made so much easier for yourself:</p>
+					<ul>
+						<li>- keeping track of your order's delivery status</li>
+						<li>- changing or canceling the order</li>
+						<li>- using your previous purchase history to become eligible for a Loyal Customer's discount</li>
+					</ul>
+              	</div>				
+			</div>
+			<div class=""accordion-block close"">
+				<div class=""accordion-trigger close"">
+					<span>Which shipping providers do you use?</span>
+				</div>
+				<div class=""accordion-content"">
+					<p> Yes and this is made with your own convenience in mind.  By creating (or using) an account during the  purchasing process you will have 3 things made so much easier for yourself:</p>
+					<ul>
+						<li>- keeping track of your order's delivery status</li>
+						<li>- changing or canceling the order</li>
+						<li>- using your previous purchase history to become eligible for a Loyal Customer's discount</li>
+					</ul>
+              	</div>				
+			</div>
+			<div class=""accordion-block close"">
+				<div class=""accordion-trigger close"">
+					<span>How long it will take to receive the furniture?</span>
+				</div>
+				<div class=""accordion-content"">
+					<p> Yes and this is made with your own convenience in mind.  By creating (or using) an account during the  purchasing process you will have 3 things made so much easier for yourself:</p>
+					<ul>
+						<li>- keeping track of your order's delivery status</li>
+						<li>- changing or canceling the order</li>
+						<li>- using your previous purchase history to become eligible for a Loyal Customer's discount</li>
+					</ul>
+              	</div>				
+			</div>
+			<div class=""accordion-block close"">
+				<div class=""accordion-trigger close"">
+					<span>How long it will take to receive the furniture?</span>
+				</div>
+				<div class=""accordion-content"">
+					<p> Yes and this is made with your own convenience in mind.  By creating (or using) an account during the  purchasing process you will have 3 things made so much easier for yourself:</p>
+					<ul>
+						<li>- keeping track of your order's delivery status</li>
+						<li>- changing or canceling the order</li>
+						<li>- using your previous purchase history to become eligible for a Loyal Customer's discount</li>
+					</ul>
+              	</div>				
+			</div>
+			<div class=""accordion-block close"">
+				<div class=""accordion-trigger close"">
+					<span>Do you offer any kind of discounts?</span>
+				</div>
+				<div class=""accordion-content"">
+					<p> Yes and this is made with your own convenience in mind.  By creating (or using) an account during the  purchasing process you will have 3 things made so much easier for yourself:</p>
+					<ul>
+						<li>- keeping track of your order's delivery status</li>
+						<li>- changing or canceling the order</li>
+						<li>- using your previous purchase history to become eligible for a Loyal Customer's discount</li>
+					</ul>
+              	</div>				
+			</div>
+			<div class=""accordion-block close"">
+				<div class=""accordion-trigger close"">
+					<span>Do you accept orders from all 50 US states?</span>
+				</div>
+				<div class=""accordion-content"">
+					<p> Yes and this is made with your own convenience in mind.  By creating (or using) an account during the  purchasing process you will have 3 things made so much easier for yourself:</p>
+					<ul>
+						<li>- keeping track of your order's delivery status</li>
+						<li>- changing or canceling the order</li>
+						<li>- using your previous purchase history to become eligible for a Loyal Customer's discount</li>
+					</ul>
+              	</div>				
+			</div>
+		</div>
+	</div>
+</div>",2016-09-14 12:03:12,2016-10-10 14:04:38,1,0,,NULL,NULL,NULL,NULL,NULL,
+17,Magetique,2columns-left,,,home,,,2016-12-08 10:47:35,2017-02-22 18:58:20,1,0,"<referenceContainer name=""left"">
+    <!--<action method=""unsetChild"">-->
+        <!--<argument name=""alias"" xsi:type=""string"">right.reports.product.viewed</argument>-->
+    <!--</action>-->
+    <!--<action method=""unsetChild"">-->
+        <!--<argument name=""alias"" xsi:type=""string"">right.reports.product.compared</argument>-->
+    <!--</action>-->
+    <!--<action method=""unsetChild"">-->
+        <!--<argument name=""alias"" xsi:type=""string"">right.reports.product.compared</argument>-->
+    <!--</action>-->
+    <referenceContainer name=""wishlist_sidebar"" remove=""true""/>
+    <referenceBlock name=""catalog.compare.sidebar"" remove=""true""/>
+</referenceContainer>
+<referenceContainer name=""sidebar.additional"">
+    <block class=""Magento\Newsletter\Block\Subscribe"" name=""form.subscribe2"" template=""subscribe_left.phtml""/>
+    <block class=""Magento\Cms\Block\Block"" name=""left_custom_block"" after=""form.subscribe2"">
+        <arguments>
+            <argument name=""block_id"" xsi:type=""string"">left_custom_block</argument>
+        </arguments>
+    </block>
+</referenceContainer>
+
+<referenceContainer name=""sidebar.main"">
+    <block class=""Magento\Cms\Block\Block"" name=""left_custom_block_lt2"">
+        <arguments>
+            <argument name=""block_id"" xsi:type=""string"">left_custom_block_lt2</argument>
+        </arguments>
+    </block>
+    <block class=""Magento\Cms\Block\Block"" name=""block_4_3_layout_4"">
+        <arguments>
+            <argument name=""block_id"" xsi:type=""string"">block_4_3_layout_4</argument>
+        </arguments>
+    </block>
+</referenceContainer>
+
+",NULL,NULL,NULL,NULL,NULL,

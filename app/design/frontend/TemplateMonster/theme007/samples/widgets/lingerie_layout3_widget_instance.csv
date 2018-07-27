@@ -1,0 +1,2 @@
+instance_id,instance_type,theme_id,title,store_ids,widget_parameters,sort_order
+18,TemplateMonster\FilmSlider\Block\Widget\FilmSlider,4,Slider Lingerie lt_3 ,4,"{""title"":"""",""slider_id"":""7""}",10

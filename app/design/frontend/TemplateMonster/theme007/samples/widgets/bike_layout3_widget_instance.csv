@@ -1,0 +1,6 @@
+instance_id,instance_type,theme_id,title,store_ids,widget_parameters,sort_order
+35,TemplateMonster\FilmSlider\Block\Widget\FilmSlider,4,Slider_layout_3 Bike,"8,9,10","{""title"":"""",""slider_id"":""3""}",10
+47,Magento\Cms\Block\Widget\Block,4,block_5_3_layout_3 bike lt_3,10,"{""block_id"":""33""}",20
+48,TemplateMonster\FeaturedProduct\Block\FeaturedProduct\Widget\Product,4,Featured Bike lt_3 ,10,"{""product_types"":[""new_product""],""product_ids"":"""",""conditions"":{""1"":{""new_child"":""""}},""css_class"":""border-none-content"",""cache_lifetime"":""0"",""product_image_width"":""470"",""product_image_height"":""470"",""product_name_length"":""28"",""number_per_view"":""8"",""show_carousel"":""0"",""number_per_row"":""4"",""show_label"":""0"",""is_banner"":""0"",""banner_content"":"""",""hover_type"":""0"",""json_data"":""{'new_product':{'title':'Featured Products','label':'New'} }""}",10
+49,Magento\Cms\Block\Widget\Block,4,block_6_3_layout_3 bike lt_3 ,10,"{""block_id"":""34""}",20
+50,TemplateMonster\Blog\Block\Widget\PostList,4,Blog Bike lt_3,10,"{""widget_status"":""1"",""title"":""From the Blog"",""post_title_length"":""34"",""post_desc_length"":""180"",""post_amount"":""5"",""post_amount_per_row"":"""",""is_enable_carousel"":""1"",""post_amount_per_view"":""3""}",30

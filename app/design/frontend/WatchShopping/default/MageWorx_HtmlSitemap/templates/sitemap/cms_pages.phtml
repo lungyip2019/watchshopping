@@ -1,0 +1,19 @@
+<?php
+/**
+ * Copyright © 2015 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+?>
+
+<?php $items = $block->getCollection(); ?>
+
+<?php if (!empty($items)): ?>
+<h3 class="page-title"><strong><?php echo __('Pages') ?></strong></h3>
+<ul class="cmspages">
+<?php foreach ($items as $item): ?>
+<li class="page-url">
+    <a href="<?php echo $block->escapeUrl($item->getUrl()) ?>"><i class="fa fa-angle-right" aria-hidden="true"></i> <?php echo $block->escapeHtml($item->getTitle()) ?></a>
+</li>
+<?php endforeach; ?>
+</ul>
+<?php endif;?>

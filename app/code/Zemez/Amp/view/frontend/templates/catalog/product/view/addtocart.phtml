@@ -1,0 +1,30 @@
+<?php
+    /** @var $block \Magento\Catalog\Block\Product\View */
+    $_helperAmp = $this->helper('Zemez\Amp\Helper\Data');
+    $buttonTitle = __('Add to Cart');
+    $_product = $block->getProduct();
+    $_addToCartUrl = $_helperAmp->getAddToCartUrl($_product);
+?>
+<?php if ($_helperAmp->isSecure() && $block->shouldRenderQuantity()): ?>
+    <form class="amp-addtocart-form" method="get" action="<?php echo $_addToCartUrl ?>" target="_top">
+        <div class="fieldset">
+    		<div class="field qty">
+    			<label class="label" for="qty"><span><?php echo __('Qty') ?></span></label>
+    			<input
+    				class="qty-input"
+    				type="number"
+    				name="qty"
+                    id="qty"
+    				min="1"
+    				max="255"
+    				value="<?php echo $block->getProductDefaultQty() * 1 ?>"
+    				title="<?php echo __('Qty') ?>" class="input-text qty"
+    				required
+    			>
+    		</div>
+    		<input type="submit" class="button btn-cart" value="<?php echo $buttonTitle ?>">
+        </div>
+  	</form>
+<?php else : ?>
+    <a href="<?php echo $_addToCartUrl ?>"><?php echo $buttonTitle ?></a>
+<?php endif; ?>

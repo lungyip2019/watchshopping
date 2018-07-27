@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+<referenceContainer name="left">
+    <referenceContainer name="wishlist_sidebar" remove="true"/>
+    <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+</referenceContainer>
+<referenceContainer name="sidebar.additional">
+    <block class="Magento\Newsletter\Block\Subscribe" name="form.subscribe2" template="subscribe_left.phtml"/>
+    <block class="Magento\Cms\Block\Block" name="left_custom_block" after="form.subscribe2">
+        <arguments>
+            <argument name="block_id" xsi:type="string">left_custom_block</argument>
+        </arguments>
+    </block>
+</referenceContainer>
+
+<referenceContainer name="sidebar.main">
+    <block class="Magento\Cms\Block\Block" name="left_custom_block_lt2">
+        <arguments>
+            <argument name="block_id" xsi:type="string">left_custom_block_lt2</argument>
+        </arguments>
+    </block>
+    <block class="Magento\Cms\Block\Block" name="block_4_3_layout_4">
+        <arguments>
+            <argument name="block_id" xsi:type="string">block_4_3_layout_4</argument>
+        </arguments>
+    </block>
+</referenceContainer>
+
+
+</page>

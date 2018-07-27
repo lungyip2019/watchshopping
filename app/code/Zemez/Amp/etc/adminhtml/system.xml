@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="zemez" class="zemez_tab" sortOrder="99"  translate="label">
+            <label>Zemez</label>
+        </tab>
+        <section id="tm_amp" translate="label" type="text" sortOrder="99" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Accelerated Mobile Page</label>
+            <tab>zemez</tab>
+            <resource>Zemez_Amp::config_tm_amp</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="enabled" translate="label" type="select" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Extension</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="pages" translate="label comment" type="multiselect" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>AMP Enabled On</label>
+                    <source_model>Zemez\Amp\Model\System\Config\Source\Page</source_model>
+                </field>
+
+            </group>
+            <group id="logo" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Amp Logo Image</label>
+                <field id="image" translate="label" type="image" sortOrder="21" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Image</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">theme_options/logo</upload_dir>
+                    <base_url type="media" scope_info="1">theme_options/logo</base_url>
+                    <comment><![CDATA[Allowed file types: jpeg, gif, png.]]></comment>
+                </field>
+                <field id="logo_image_width" translate="label" type="text" sortOrder="22" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Logo Image Width</label>
+                    <frontend_class>required-entry validate-digits</frontend_class>
+                </field>
+                <field id="logo_image_height" translate="label" type="text" sortOrder="23" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Height</label>
+                    <frontend_class>required-entry validate-digits</frontend_class>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

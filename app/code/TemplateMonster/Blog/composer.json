@@ -1,0 +1,13 @@
+{
+    "name": "templatemonster/module-blog",
+    "type": "magento2-module",
+    "version": "1.1.9",
+    "autoload": {
+        "psr-4": {"TemplateMonster\\Blog\\":""},
+        "files": [ "registration.php" ]
+    },
+    "extra": {
+        "isStandalone": "true",
+        "magentoVersion": "v2.2.0"
+    }
+}

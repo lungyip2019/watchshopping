@@ -1,0 +1,95 @@
+<style>
+
+.cart-header-totals div.table-wrapper{
+    height: 50px;
+    margin: -30px;
+}
+.cart-header-totals .table-caption{
+    display: none;
+}
+
+.cart-header-totals tr.totals-tax{
+    display: none;
+}
+
+.cart-header-totals tr.totals-tax-summary{
+    display: none;
+}
+.cart-header-totals tr.totals-tax-details{
+    display: none;
+}
+
+.cart-header-totals tr.totals {
+    display: none;
+}
+.cart-header-totals tr.grand.totals {
+    display: table-cell;
+}
+.cart-header-totals tr.grand.totals.incl {
+    display: none;
+}
+.cart-header-totals tr.grand.totals th.mark{
+    display: none;
+}
+.cart-header-totals tr.grand.totals td.amount{
+    margin-bottom: 0px;
+    border: none;
+}
+.cart-header-totals{
+    display: inline-block;
+}
+.message-front{
+    display: inline-block;
+}
+.message-end{
+    display: inline-block;
+}
+
+
+
+</style>
+
+
+
+<?php if (!empty($block->getItemsSummaryQty())):?>
+<div class="car-content">
+    <div class="cart-message">
+        <div class="message-front">You have <span class="total-qty"><?php echo $block->getItemsSummaryQty();?></span> items for a total of</div>
+        <div id="cart-header-totals" class="cart-header-totals" data-bind="scope:'block-totals'">
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <script type="text/x-magento-init">
+            {
+                "#cart-totals": {
+                    "Magento_Ui/js/core/app": <?= /* @escapeNotVerified */ $block->getJsLayout() ?>
+                }
+            }
+    </script>
+        </div>
+        <div class="message-end">in your cart.</div>
+        <p>Adding an item to your cart doesn't hold it, so get what you love before it's gone.</p>
+    </div>
+    <div class="continue">
+        <?php if ($block->getContinueShoppingUrl()): ?>
+        <button type="button">
+            <a class="action continue"
+               href="<?= $block->escapeUrl($block->getContinueShoppingUrl()) ?>"
+               title="<?= $block->escapeHtml(__('Continue Shopping')) ?>">
+                <span><?= /* @escapeNotVerified */ __('CONTINUE SHOPPING') ?></span>
+            </a>
+        </button>
+        <?php endif; ?>
+    </div>
+    <div class="checkout">
+        <?php if ($block->isPossibleCheckout()):?>
+            <button type="button"
+                    data-role="proceed-to-checkout"
+                    title="<?= /* @escapeNotVerified */ __('Proceed to Checkout') ?>"
+                    data-mage-init='{"Magento_Checkout/js/proceed-to-checkout":{"checkoutUrl":"<?= /* @escapeNotVerified */ $block->getCheckoutUrl() ?>"}}'
+                    class="action primary checkout<?= ($block->isDisabled()) ? ' disabled' : '' ?>"
+                    <?php if ($block->isDisabled()):?>disabled="disabled"<?php endif; ?>>
+                <span><?= /* @escapeNotVerified */ __('I\'M AREADY TO CHECK OUT') ?></span>
+            </button>
+        <?php endif; ?>
+    </div>
+</div>
+<?php endif;?>

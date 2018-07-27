@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="TemplateMonster_Blog::config_blog" title="Config Blog" sortOrder="20" />
+                        </resource>
+                    </resource>
+                </resource>
+                <resource id="TemplateMonster_Base::modules" title="Blog Base">
+                    <resource id="TemplateMonster_Blog::blog_elements" title="Blog" sortOrder="100">
+                        <resource id="TemplateMonster_Blog::category" title="Category" sortOrder="100">
+                            <resource id="TemplateMonster_Blog::category_save" title="Save Category" sortOrder="100" />
+                            <resource id="TemplateMonster_Blog::category_delete" title="Delete Category" sortOrder="200" />
+                        </resource>
+                        <resource id="TemplateMonster_Blog::post" title="Posts" sortOrder="200">
+                            <resource id="TemplateMonster_Blog::post_save" title="Save Post" sortOrder="100" />
+                            <resource id="TemplateMonster_Blog::post_delete" title="Delete Post" sortOrder="200" />
+                        </resource>
+                        <resource id="TemplateMonster_Blog::comment" title="Comments" sortOrder="300">
+                            <resource id="TemplateMonster_Blog::comment_save" title="Save Comment" sortOrder="100" />
+                            <resource id="TemplateMonster_Blog::comment_delete" title="Delete Comment" sortOrder="200" />
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

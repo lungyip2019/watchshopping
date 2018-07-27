@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Venice\Sales\Block\OrderDetails"  name="sales_order_details" template="Venice_Sales::order_detail.phtml"  before="-"/>
+
+        </referenceContainer>
+
+        <referenceBlock name="order.status" remove="true"/>
+        <referenceBlock name="order.date" remove="true"/>
+        <referenceBlock name="sales.order.info.buttons" remove="true"/>
+
+        <move element="sales.order.info" destination="content" before="sales.order.info.links" />
+
+    </body>
+</page>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<page layout="empty" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+  <body>
+    <referenceBlock name="product.info">
+      <arguments>
+        <argument name="submit_route_data" xsi:type="array">
+          <item name="route" xsi:type="string">tm_amp/cart/add</item>
+        </argument>
+      </arguments>
+    </referenceBlock>
+
+    <referenceContainer name="amp.content">
+      <block class="Magento\Framework\View\Element\Template" name="amp-product-view-options" template="Zemez_Amp::catalog/product/view/only-options.phtml"/>
+    </referenceContainer>
+
+    <referenceContainer name="product.info.stock.sku" remove="true"/>
+    <referenceContainer name="product.info.social"    remove="true"/>
+    <referenceContainer name="amp.product.info.media" remove="true"/>        
+    <referenceContainer name="copyright"              remove="true"/>
+    <referenceContainer name="authentication-popup"   remove="true"/>
+    <referenceContainer name="page.main.title"        remove="true"/>
+    <referenceContainer name="absolute_footer"        remove="true"/>
+    <referenceContainer name="amp.content.aside"      remove="true"/>
+    <referenceBlock     name="product.info.overview"  remove="true"/>
+    <referenceBlock     name="product.info.details"   remove="true"/>
+    <referenceBlock     name="product.info.review"    remove="true"/>
+    <referenceBlock     name="cookie_notices"         remove="true"/>
+    <referenceBlock     name="global_notices"         remove="true"/>
+
+  </body>
+</page>

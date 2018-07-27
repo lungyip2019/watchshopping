@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Page\Config">
+        <plugin name="page-config-tm-amp" type="Zemez\Amp\Model\Plugin\Framework\View\Page\ConfigPlugin"/>
+    </type>
+    <type name="Magento\Framework\UrlInterface">
+        <plugin name="url-tm-amp" type="Zemez\Amp\Model\Plugin\Framework\Url"/>
+    </type>
+    <type name="Magento\Framework\Controller\ResultInterface">
+        <plugin name="controller-result-interface-tm-amp" type="Zemez\Amp\Model\Plugin\Framework\Controller\ResultInterfacePlugin"/>
+    </type>
+
+    <type name="Magento\Framework\Event\ConfigInterface">
+        <plugin name="event-config-interface-tm-amp" type="Zemez\Amp\Model\Plugin\Framework\Event\ConfigInterfacePlugin" sortOrder="10"/>
+    </type>
+    <type name="Magento\Catalog\Block\Product\View">
+        <plugin name="catalog-block-product-view-tm-amp" type="Zemez\Amp\Model\Plugin\Magento\Catalog\Block\Product\ViewPlugin" sortOrder="10"/>
+    </type>
+    <virtualType name="Zemez\Amp\Block\Catalog\Layer\Navigation\Category" type="Zemez\Amp\Block\Catalog\Layer\Navigation">
+        <arguments>
+            <argument name="filterList" xsi:type="object">categoryFilterList</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Swatches\Block\LayeredNavigation\RenderLayered">
+        <plugin name="swatches-render-layered-tm-amp" type="Zemez\Amp\Model\Plugin\Magento\Swatches\LayeredNavigation\RenderLayeredPlugin" sortOrder="10"/>
+    </type>
+    <type name="Magento\Cms\Helper\Page">
+        <plugin name="Zemez_Amp_prepare_result_page"
+            type="Zemez\Amp\Model\Plugin\Cms\Helper\PagePlugin"
+            sortOrder="0"
+            disabled="false"/>
+    </type>
+</config>

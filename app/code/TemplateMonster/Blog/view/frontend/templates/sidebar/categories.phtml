@@ -1,0 +1,31 @@
+<?php
+$categories = $this->getCategories();
+if($categories->getItems()):
+    $total = count($categories);
+    $limit = $this->getCategoriesLimit();
+?>
+<div class="block block-blog-categories">
+    <div class="block-title">
+        <strong><?php echo __('Blog Categories') ?></strong>
+    </div>
+    <div class="block-content" data-mage-init='{"categoriesListCollapse" : {"limit" : "<?php echo $limit; ?>", "total" : "<?php echo $total; ?>"}}'>
+        <ul class="categories-list">
+            <?php $i = 0; ?>
+            <?php foreach ($categories as $category): ?>
+                <li <?php if ($i >= $limit && $limit > 0) echo 'style="display:none"'; ?>>
+                    <a href="<?php echo $this->getCategoryUrl($category); ?>">
+                        <?php echo $category->getName(); ?>
+                    </a>
+                </li>
+                <?php $i++; ?>
+            <?php endforeach; ?>
+        </ul>
+        <?php if ($i > $limit && $limit > 0): ?>
+            <span id="blog-show-all" class="closed">
+                <span class="more"><?php echo __('Show More'); ?></span>
+                <span class="less"><?php echo __('Show Less'); ?></span>
+            </span>
+        <?php endif; ?>
+    </div>
+</div>
+<?php endif; ?>

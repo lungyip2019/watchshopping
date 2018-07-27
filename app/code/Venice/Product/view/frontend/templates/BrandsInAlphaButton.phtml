@@ -1,0 +1,29 @@
+<?php
+
+/** @var \TemplateMonster\ShopByBrand\Block\Brand\View $block */
+$collection = $block->getBrandCollection();
+$alphalist = [];
+foreach($collection as $brand){         
+    $alpha = substr($brand->getName(),0,1);
+    if(!isset($alphalist[$alpha])){
+        $alphalist[$alpha] = [];        
+    }
+    array_push($alphalist[$alpha],$brand);    
+    
+}
+ksort($alphalist);
+?>
+
+<label for="show-menu" class="show-menu">Brands</label>
+<input type="checkbox" id="show-menu" class="show-menu" role="button"/>
+    <ul class="brands-menu">
+        <?php foreach($alphalist as $key=>$brands){?>
+            <li><h2><?php echo $key?></h2>
+                <ul>    
+                    <?php foreach($brands as $brand) {?>
+                        <li><a href="<?php echo $brand->getUrl()?>"><?php echo $brand->getName()?></a></li>
+                    <?php } ?>
+                </ul>
+	    </li>
+        <?php } ?>
+    </ul>

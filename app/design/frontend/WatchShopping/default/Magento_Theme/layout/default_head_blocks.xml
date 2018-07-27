@@ -1,0 +1,9 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+	<link rel="stylesheet" src_type="url" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css"/>
+        <link src="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" src_type="url" rel="stylesheet" type="text/css" />
+        <!-- Add local resources -->
+        <css src="css/watchshopping.css" />
+	<remove src="css/linearicons.css" />
+    </head>
+</page>

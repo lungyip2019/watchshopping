@@ -1,0 +1,49 @@
+<?php
+    $brands = $block->getBrandCollection();
+    $helper = $this->helper('TemplateMonster\ShopByBrand\Helper\Data');
+
+    $widgetTitle = $block->getTitle();
+    $brandLogoWidth = $block->getBrandsLogoWidth();
+    $isCarousel = $block->getShowCarousel();
+    $visibleItems = $block->getBrandsPerView();
+    $itemWidth = $block->getItemWidth();
+    $cssClass = $block->getCssClass();
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+    $storeManager = $objectManager->get('\Magento\Store\Model\StoreManagerInterface');
+    $mediaUrl =  $storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
+    $shopUrl =  $storeManager->getStore()->getBaseUrl();
+?>
+
+<div class="block widget brands <?php /* @escapeNotVerified */ echo $cssClass; ?>">
+
+    <div class="block-title">
+        <strong role="heading" aria-level="2"><?php /* @escapeNotVerified */ echo __($widgetTitle); ?></strong>
+    </div>
+    <div class="block-content">
+        <ul class="brandlist"
+            <?php if ($isCarousel): ?>
+                data-mage-init='{"brandCarousel": {"items": "<?php /* @escapeNotVerified */ echo $visibleItems; ?>"}}'
+            <?php endif; ?>>
+            <?php foreach ($brands as $brand):?>
+                <li class="<?php echo strtolower($brand->getName()); ?>" <?php echo $itemWidth; ?>>
+                    <div class="inner">
+                        <?php if ($brand->getImageLogoName()): ?>
+                            <a class="brand-logo" href="<?php echo $brand->getUrl() ?>" alt="<?php echo $brand->getName(); ?>">
+                                <!--<img class="lazy" src="<?php echo $mediaUrl.'loading.gif'?>" data-original="<?php echo $helper->resizeImageUrl($brand->getImageLogoName()); ?>" alt="<?php echo $block->escapeHtml($brand->getName()) ?>">-->
+								<img class="lazy" src="<?php echo $mediaUrl.'loading.gif'?>" data-original="<?php echo $helper->resizeImageUrl($brand->getImageLogoName()); ?>" alt="<?php echo $block->escapeHtml($brand->getName()) ?>">
+                                <div class="brand-title">
+                                 
+									<img class="lazy" src="" data-original="<?php echo str_replace(".jpg",".svg" ,$helper->resizeImageUrl($brand->getImageLogoName())) ?>">
+                                </div>
+                            </a>
+                        <?php endif; ?>
+                    </div>
+                </li>
+            <?php endforeach;?>
+        </ul>
+        <div class="view-more-control">
+            <a class="btn btn-primary  btn-view-more" href="<?php echo $shopUrl."brand/index" ?>" role="button"><?php echo __('View More')?> <i class="fa fa-angle-right" aria-hidden="true"></i>
+</a>
+        </div>
+    </div>
+</div>

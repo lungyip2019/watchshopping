@@ -1,0 +1,11 @@
+<?php
+/**
+ * Copyright © 2016 TemplateMonster. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/* @var $block \TemplateMonster\Blog\Block\Link */
+?>
+<li class="link blog">
+    <a <?php /* @escapeNotVerified */ echo $block->getLinkAttributes() ?>><?php echo $block->escapeHtml($block->getLabel()) ?></a>
+</li>
